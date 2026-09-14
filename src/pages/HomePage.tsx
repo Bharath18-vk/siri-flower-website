@@ -22,7 +22,7 @@ export const HomePage: React.FC = () => {
         Carefully designed for desktop & mobile (375px, 390px, 430px).
         Shows warm living room with sofa, curtains, window treatment, and ambient lighting.
       */}
-      <section className="relative min-h-[92vh] sm:min-h-screen flex items-end pb-16 sm:pb-24 pt-32 overflow-hidden bg-espresso text-ivory">
+      <section className="relative min-h-[100svh] sm:min-h-screen flex items-end pb-12 sm:pb-20 pt-28 sm:pt-32 overflow-hidden bg-espresso text-ivory">
         {/* Background Image with responsive positioning focusing on sofa & window treatments */}
         <div className="absolute inset-0 z-0">
           <img
@@ -31,39 +31,42 @@ export const HomePage: React.FC = () => {
             className="w-full h-full object-cover object-[center_35%] sm:object-center brightness-100 contrast-[1.02] scale-[1.02] transition-transform duration-1000 ease-out"
             loading="eager"
           />
-          {/* Lighter, warmer overlay: 10-15% reduced darkness so sofa, plants, and window glow with natural warmth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/58 via-black/20 to-transparent" />
+          {/* Lighter, warmer base overlay: preserves interior illumination */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-transparent hidden md:block" />
+          
+          {/* Localized bottom-to-transparent scrim directly behind hero content: begins darker around text, fades upward */}
+          <div className="absolute inset-x-0 bottom-0 h-[65%] sm:h-[50%] bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
         </div>
 
         {/* Hero Content positioned in lower-middle area */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="max-w-3xl space-y-6 sm:space-y-8">
-            {/* Editorial category eyebrow badge with high-contrast backdrop */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-black/55 backdrop-blur-md border border-white/25 shadow-luxury">
-                <span className="w-1.5 h-1.5 rounded-full bg-warm-gold shrink-0" />
-                <span className="text-[10.5px] sm:text-xs uppercase tracking-[0.22em] font-semibold text-ivory drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
-                  {hero.categoryBadge}
-                </span>
-              </div>
+          <div className="max-w-3xl relative">
+            {/* Subtle localized ambient scrim to ensure pristine text readability over busy elements */}
+            <div className="absolute -inset-x-4 -inset-y-6 -z-10 bg-gradient-to-t from-black/50 via-black/25 to-transparent blur-xl pointer-events-none md:hidden" />
+
+            {/* Subtle small uppercase editorial category label */}
+            <div className="mb-2.5 sm:mb-3.5">
+              <p className="text-[9.5px] min-[390px]:text-[10px] sm:text-[11px] uppercase tracking-[0.22em] sm:tracking-[0.25em] font-medium text-stone-200/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                {hero.categoryBadge}
+              </p>
             </div>
 
-            {/* Confident, elegant headline with subtle drop-shadow for pristine contrast */}
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.08] tracking-tight text-ivory drop-shadow-[0_2px_10px_rgba(0,0,0,0.4)]">
+            {/* Confident, elegant Cormorant Garamond headline with drop-shadow for pristine contrast */}
+            <h1 className="font-serif text-[2.6rem] min-[390px]:text-[2.85rem] sm:text-6xl md:text-7xl font-normal leading-[1.06] tracking-tight text-ivory drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)] mb-3.5 sm:mb-4.5">
               TRANSFORM<br />YOUR SPACE.
             </h1>
 
-            {/* Supporting description */}
-            <p className="text-sm sm:text-base md:text-lg text-stone-100 font-light leading-relaxed max-w-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">
+            {/* Supporting description with comfortable reading line length */}
+            <p className="text-[13.5px] sm:text-base md:text-lg text-stone-100/95 font-light leading-relaxed max-w-[325px] min-[390px]:max-w-md sm:max-w-xl drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)] mb-5 sm:mb-6">
               {hero.description}
             </p>
 
-            {/* Dual CTAs tailored for mobile and desktop */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4">
+            {/* Dual CTAs: large, thumb-friendly, non-overlapping with consistent gap */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <a
                 href="#collection"
-                className="inline-flex items-center justify-center space-x-2 px-7 py-3.5 sm:py-4 bg-ivory text-espresso hover:bg-warm-gold hover:text-ivory rounded font-medium text-xs uppercase tracking-[0.16em] transition-all shadow-luxury text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3.5 sm:py-4 bg-ivory text-espresso hover:bg-warm-gold hover:text-ivory rounded font-medium text-xs uppercase tracking-[0.16em] transition-all shadow-luxury text-center active:scale-[0.99]"
               >
                 <span>{hero.primaryCta}</span>
                 <ArrowDown className="w-3.5 h-3.5 text-stone-600" />
@@ -73,7 +76,7 @@ export const HomePage: React.FC = () => {
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 px-7 py-3.5 sm:py-4 bg-stone-900/80 hover:bg-stone-900 text-ivory border border-stone-600/80 hover:border-warm-gold rounded font-medium text-xs uppercase tracking-[0.16em] backdrop-blur-md transition-all text-center"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3.5 sm:py-4 bg-stone-900/85 hover:bg-stone-900 text-ivory border border-stone-600/80 hover:border-warm-gold rounded font-medium text-xs uppercase tracking-[0.16em] backdrop-blur-md transition-all text-center active:scale-[0.99]"
               >
                 <MessageCircle className="w-4 h-4 text-green-400" />
                 <span>{hero.secondaryCta}</span>
