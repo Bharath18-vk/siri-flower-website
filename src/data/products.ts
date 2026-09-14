@@ -227,7 +227,7 @@ export const productsData: ProductItem[] = [
     whatsappMessage:
       'Hi D&D Home Decor, I’m interested in wallpapers and would like to see catalog designs for accent walls.',
     heroImage:
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1400&q=80',
+      '/images/products/wallpapers.jpg',
     galleryImages: [
       {
         url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80',
