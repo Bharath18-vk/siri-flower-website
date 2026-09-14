@@ -39,16 +39,11 @@ export const HomePage: React.FC = () => {
         {/* Hero Content positioned in lower-middle area */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl space-y-6 sm:space-y-8">
-            {/* Editorial labels */}
-            <div className="space-y-2">
-              <span className="inline-block text-[11px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-warm-gold">
-                {hero.eyebrow}
+            {/* Editorial category eyebrow */}
+            <div>
+              <span className="inline-block text-[10.5px] sm:text-xs uppercase tracking-[0.22em] font-semibold text-warm-gold drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]">
+                {hero.categoryBadge}
               </span>
-              <div className="block">
-                <span className="inline-block text-[9.5px] sm:text-[10.5px] uppercase tracking-[0.2em] font-medium text-stone-300/90 py-0.5 border-b border-warm-gold/40">
-                  {hero.categoryBadge}
-                </span>
-              </div>
             </div>
 
             {/* Confident, elegant headline with subtle drop-shadow for pristine contrast */}
