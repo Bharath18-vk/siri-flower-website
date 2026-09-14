@@ -22,7 +22,7 @@ export const HomePage: React.FC = () => {
         Carefully designed for desktop & mobile (375px, 390px, 430px).
         Shows warm living room with sofa, curtains, window treatment, and ambient lighting.
       */}
-      <section className="relative min-h-[100svh] sm:min-h-screen flex items-end pb-12 sm:pb-20 pt-28 sm:pt-32 overflow-hidden bg-espresso text-ivory">
+      <section className="relative min-h-[100svh] sm:min-h-screen flex items-end pb-10 sm:pb-12 md:pb-14 lg:pb-16 pt-24 sm:pt-28 md:pt-32 overflow-hidden bg-espresso text-ivory">
         {/* Background Image with responsive positioning focusing on sofa & window treatments */}
         <div className="absolute inset-0 z-0">
           <img
@@ -33,16 +33,19 @@ export const HomePage: React.FC = () => {
           />
           {/* Lighter, warmer base overlay: preserves interior illumination */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-transparent hidden md:block" />
+          
+          {/* Subtle localized horizontal scrim on desktop behind left content (plants/wall-art) - does not darken right side */}
+          <div className="absolute inset-y-0 left-0 w-[58%] lg:w-[46%] bg-gradient-to-r from-black/45 via-black/20 to-transparent pointer-events-none hidden md:block" />
           
           {/* Localized bottom-to-transparent scrim directly behind hero content: begins darker around text, fades upward */}
-          <div className="absolute inset-x-0 bottom-0 h-[65%] sm:h-[50%] bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-[65%] sm:h-[48%] bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
         </div>
 
         {/* Hero Content positioned in lower-middle area */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl relative">
             {/* Subtle localized ambient scrim to ensure pristine text readability over busy elements */}
+            <div className="absolute -inset-x-6 -inset-y-6 -z-10 bg-gradient-to-r from-black/40 via-black/15 to-transparent blur-2xl pointer-events-none hidden md:block" />
             <div className="absolute -inset-x-4 -inset-y-6 -z-10 bg-gradient-to-t from-black/50 via-black/25 to-transparent blur-xl pointer-events-none md:hidden" />
 
             {/* Subtle small uppercase editorial category label */}
