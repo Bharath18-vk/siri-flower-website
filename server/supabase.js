@@ -22,13 +22,22 @@ if (isSupabaseConfigured) {
   );
 }
 
-// Local Fallback Directories
-const DATA_DIR = path.resolve(__dirname, '../.data');
+import os from 'os';
+
+// Fallback Directories (dev or temporary lambda)
+const isServerless = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const DATA_DIR = isServerless ? path.join(os.tmpdir(), 'dnd_data') : path.resolve(__dirname, '../.data');
 const UPLOADS_DIR = path.resolve(DATA_DIR, 'uploads');
 const DB_FILE = path.resolve(DATA_DIR, 'media.json');
 
-if (!isSupabaseConfigured && !fs.existsSync(UPLOADS_DIR)) {
-  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+if (!isSupabaseConfigured) {
+  try {
+    if (!fs.existsSync(UPLOADS_DIR)) {
+      fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+    }
+  } catch (err) {
+    console.warn('[Storage] Notice: Could not create local directory, will rely on cloud storage:', err.message);
+  }
 }
 
 function readLocalDB() {
