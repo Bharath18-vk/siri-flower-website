@@ -60,6 +60,34 @@ CREATE POLICY "Allow service role full access"
 -- Create index on category and created_at for fast query performance
 CREATE INDEX IF NOT EXISTS idx_gallery_images_category ON public.gallery_images (category);
 CREATE INDEX IF NOT EXISTS idx_gallery_images_created_at ON public.gallery_images (created_at DESC);
+
+-- Create admin_users table for client self-service password management
+CREATE TABLE IF NOT EXISTS public.admin_users (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  username TEXT NOT NULL UNIQUE,
+  password_hash TEXT NOT NULL,
+  token_version INTEGER NOT NULL DEFAULT 1,
+  created_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL,
+  updated_at TIMESTAMPTZ DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- Enable Row Level Security (RLS)
+ALTER TABLE public.admin_users ENABLE ROW LEVEL SECURITY;
+
+-- Deny all public and anon access (prevents public REST leakage of password hashes)
+CREATE POLICY "Deny all public access to admin_users"
+  ON public.admin_users
+  FOR ALL
+  TO anon, authenticated
+  USING (false);
+
+-- Allow service role full access (used exclusively by serverless backend)
+CREATE POLICY "Allow service role full access to admin_users"
+  ON public.admin_users
+  FOR ALL
+  TO service_role
+  USING (true)
+  WITH CHECK (true);
 ```
 
 ### Step 2.3: Create the Storage Bucket

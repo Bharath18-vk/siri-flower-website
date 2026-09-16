@@ -63,6 +63,7 @@ const isServerless = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTI
 const DATA_DIR = isServerless ? path.join(os.tmpdir(), 'dnd_data') : path.resolve(__dirname, '../.data');
 const UPLOADS_DIR = path.resolve(DATA_DIR, 'uploads');
 const DB_FILE = path.resolve(DATA_DIR, 'media.json');
+const ADMIN_DB_FILE = path.resolve(DATA_DIR, 'admin_user.json');
 
 if (!isSupabaseConfigured) {
   try {
@@ -304,4 +305,141 @@ export async function deleteImageRecord(id) {
   return true;
 }
 
+/**
+ * Retrieve administrator record by username from Supabase or local fallback
+ */
+export async function getAdminUser(username) {
+  if (isSupabaseConfigured) {
+    try {
+      const { data, error } = await supabase
+        .from('admin_users')
+        .select('*')
+        .eq('username', username)
+        .maybeSingle();
+
+      if (error) {
+        if (
+          error.code === '42P01' ||
+          error.message?.includes('relation "admin_users" does not exist') ||
+          error.message?.includes('admin_users')
+        ) {
+          console.warn(
+            "[Admin Auth] Notice: 'admin_users' table does not exist in Supabase yet. Please create it via SQL Editor."
+          );
+          return null;
+        }
+        console.error('[Supabase DB] Error fetching admin user:', error);
+        return null;
+      }
+      return data;
+    } catch (err) {
+      console.error('[Supabase DB] Exception fetching admin user:', err.message);
+      return null;
+    }
+  }
+
+  // Local fallback
+  try {
+    if (fs.existsSync(ADMIN_DB_FILE)) {
+      const raw = fs.readFileSync(ADMIN_DB_FILE, 'utf-8');
+      const user = JSON.parse(raw);
+      if (user && user.username === username) {
+        return user;
+      }
+    }
+  } catch (err) {
+    console.error('[Storage] Error reading local admin user file:', err);
+  }
+  return null;
+}
+
+/**
+ * Bootstrap the initial administrator record if not present
+ */
+export async function bootstrapAdminUser(username, passwordHash) {
+  const initialUser = {
+    username,
+    password_hash: passwordHash,
+    token_version: 1,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+
+  if (isSupabaseConfigured) {
+    try {
+      const { data, error } = await supabase
+        .from('admin_users')
+        .insert([initialUser])
+        .select()
+        .single();
+
+      if (error) {
+        console.warn('[Supabase DB] Could not bootstrap admin user into admin_users table:', error.message);
+        return null;
+      }
+      return data;
+    } catch (err) {
+      console.warn('[Supabase DB] Bootstrap exception:', err.message);
+      return null;
+    }
+  }
+
+  // Local fallback
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    fs.writeFileSync(ADMIN_DB_FILE, JSON.stringify(initialUser, null, 2), 'utf-8');
+    return initialUser;
+  } catch (err) {
+    console.error('[Storage] Error writing local admin user file:', err);
+    return null;
+  }
+}
+
+/**
+ * Update administrator password hash in Supabase or local fallback
+ */
+export async function updateAdminPassword(username, newPasswordHash) {
+  if (isSupabaseConfigured) {
+    const existing = await getAdminUser(username);
+    const nextVersion = (existing?.token_version || 1) + 1;
+
+    const { data, error } = await supabase
+      .from('admin_users')
+      .update({
+        password_hash: newPasswordHash,
+        token_version: nextVersion,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('username', username)
+      .select()
+      .single();
+
+    if (error) {
+      console.error('[Supabase DB] Error updating admin password in database:', error);
+      throw error;
+    }
+    return data;
+  }
+
+  // Local fallback
+  const existing = (await getAdminUser(username)) || { username };
+  const nextVersion = (existing.token_version || 1) + 1;
+  const updated = {
+    ...existing,
+    username,
+    password_hash: newPasswordHash,
+    token_version: nextVersion,
+    updated_at: new Date().toISOString(),
+  };
+
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+  fs.writeFileSync(ADMIN_DB_FILE, JSON.stringify(updated, null, 2), 'utf-8');
+  return updated;
+}
+
 export { isSupabaseConfigured, UPLOADS_DIR };
+

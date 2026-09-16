@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { Lock, User, ArrowLeft, AlertCircle, ShieldCheck } from 'lucide-react';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
+import { Lock, User, ArrowLeft, AlertCircle, ShieldCheck, CheckCircle2, Eye, EyeOff } from 'lucide-react';
 import { useAdminAuth } from '../../context/AdminAuthContext';
 import { businessConfig } from '../../data/config';
 
 export const AdminLoginPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [searchParams] = useSearchParams();
   const { login, isAuthenticated } = useAdminAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (searchParams.get('message') === 'password_changed') {
+      setSuccessMessage('Password successfully updated! Please log in with your new password.');
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -65,6 +74,13 @@ export const AdminLoginPage: React.FC = () => {
             </p>
           </div>
 
+          {successMessage && (
+            <div className="p-3.5 rounded bg-green-50 border border-green-200 text-green-800 text-xs flex items-start space-x-2.5">
+              <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+              <span className="leading-relaxed font-medium">{successMessage}</span>
+            </div>
+          )}
+
           {error && (
             <div className="p-3.5 rounded bg-red-50 border border-red-200 text-red-700 text-xs flex items-start space-x-2.5">
               <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
@@ -101,13 +117,21 @@ export const AdminLoginPage: React.FC = () => {
                   <Lock className="w-4 h-4" />
                 </div>
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-3 bg-cream/30 border border-stone-200 rounded text-sm text-espresso focus:outline-none focus:border-warm-gold transition-colors"
+                  className="w-full pl-10 pr-12 py-3 bg-cream/30 border border-stone-200 rounded text-sm text-espresso focus:outline-none focus:border-warm-gold transition-colors"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute inset-y-0 right-0 pr-3.5 flex items-center text-stone-400 hover:text-stone-700 transition-colors"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
               </div>
             </div>
 

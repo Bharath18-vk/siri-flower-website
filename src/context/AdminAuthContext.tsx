@@ -7,6 +7,7 @@ interface AdminAuthContextType {
   login: (username: string, password: string) => Promise<{ success: boolean; error?: string }>;
   logout: () => Promise<void>;
   checkAuth: () => Promise<void>;
+  changePassword: (currentPassword: string, newPassword: string, confirmPassword: string) => Promise<{ success: boolean; error?: string }>;
 }
 
 const AdminAuthContext = createContext<AdminAuthContextType | undefined>(undefined);
@@ -79,6 +80,30 @@ export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     }
   };
 
+  const changePassword = async (currentPassword: string, newPassword: string, confirmPassword: string) => {
+    try {
+      const response = await fetch('/api/auth/change-password', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify({ currentPassword, newPassword, confirmPassword }),
+      });
+
+      const data = await response.json();
+      if (response.ok && data.success) {
+        setIsAuthenticated(false);
+        setUsername(null);
+        return { success: true };
+      } else {
+        return { success: false, error: data.error || 'Failed to update password.' };
+      }
+    } catch (err) {
+      return { success: false, error: 'Network error. Please try again.' };
+    }
+  };
+
   return (
     <AdminAuthContext.Provider
       value={{
@@ -88,6 +113,7 @@ export const AdminAuthProvider: React.FC<{ children: React.ReactNode }> = ({ chi
         login,
         logout,
         checkAuth,
+        changePassword,
       }}
     >
       {children}

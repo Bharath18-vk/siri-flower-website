@@ -12,6 +12,7 @@ import {
   Filter,
   Plus,
   Eye,
+  KeyRound,
 } from 'lucide-react';
 
 interface MediaRecord {
@@ -285,7 +286,17 @@ export const AdminGalleryPage: React.FC = () => {
             <span className="font-serif text-lg font-normal text-ivory">Gallery Manager</span>
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
+            <Link
+              to="/admin/dashboard?tab=settings"
+              className="inline-flex items-center space-x-1.5 text-xs text-stone-300 hover:text-ivory transition-colors"
+            >
+              <KeyRound className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Password &amp; Security</span>
+            </Link>
+
+            <div className="h-4 w-[1px] bg-stone-700" />
+
             <a
               href="/gallery"
               target="_blank"
