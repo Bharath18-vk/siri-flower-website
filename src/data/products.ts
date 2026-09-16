@@ -1,12 +1,7 @@
 /**
  * D&D Home Decor — Centralized Product Catalog
- *
- * NOTE FOR D&D CLIENT HANDOFF:
- * When D&D provides their actual product/installation photographs:
- * 1. Drop their images into public/images/products/
- * 2. Update the `heroImage` and `galleryImages` URLs below
- * 3. Tweak the features or notes as needed
- * The entire website automatically renders their real photos!
+ * Comprehensive authentic product catalog based on verified client offerings.
+ * Real D&D photography is used for portfolio items.
  */
 
 export interface ProductItem {
@@ -17,7 +12,7 @@ export interface ProductItem {
   description: string;
   ctaText: string;
   category: string;
-  filterGroup: 'WINDOWS' | 'LIVING' | 'WALLS' | 'DECOR';
+  filterGroup: 'WINDOWS' | 'FURNITURE' | 'MATTRESSES' | 'WALLS' | 'DECOR';
   whatsappMessage: string;
   heroImage: string;
   galleryImages: {
@@ -25,6 +20,7 @@ export interface ProductItem {
     caption: string;
   }[];
   features: string[];
+  suitableSpaces: string[];
   stylingTips: string[];
   materialsAndCare: {
     materials: string;
@@ -37,46 +33,55 @@ export const productsData: ProductItem[] = [
   {
     slug: 'curtains',
     number: '01',
-    title: 'CURTAINS',
+    title: 'CUSTOMISED CURTAINS',
     subtitle: 'Frame the light. Shape the mood.',
     description:
-      'From soft textures to statement fabrics, curtains can transform the atmosphere of an entire room.',
+      'Beautifully customised curtains designed around your windows, interiors and aesthetic requirements. From soft sheer textures that diffuse natural daylight to rich pleated drapes that offer privacy and warmth.',
     ctaText: 'EXPLORE CURTAINS →',
-    category: 'Window Treatments',
+    category: 'Window Solutions',
     filterGroup: 'WINDOWS',
     whatsappMessage:
-      'Hi D&D Home Decor, I’m interested in curtains and would like to know more about fabrics, sizing and styles.',
-    heroImage:
-      '/images/products/curtains.png',
+      'Hello D&D Home Decor, I am interested in customised curtains. I would like to know more about the available options.',
+    heroImage: '/images/dd/curtains/curtain-02.jpeg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Floor-to-ceiling sheer linen framing warm natural sunlight.',
+        url: '/images/dd/curtains/curtain-12.jpeg',
+        caption: 'Symmetrical floor-to-ceiling sheer and drapery installation.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Textured blackout drapes in calming neutral bedroom tones.',
+        url: '/images/dd/curtains/curtain-05.jpeg',
+        caption: 'Recessed ceiling track drapes in modern Bengaluru apartment.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Double-track sheer and main curtain layering for flexible privacy.',
+        url: '/images/dd/curtains/curtain-08.jpeg',
+        caption: 'Warm ambient room composition with layered sheer and blackout panels.',
+      },
+      {
+        url: '/images/dd/curtains/curtain-03.jpeg',
+        caption: 'Custom drop sheer panels tailored for bedroom window reveal.',
       },
     ],
     features: [
-      'Custom width & drop dimensions tailored to your windows',
-      'Extensive choice of sheer, semi-sheer, and blackout weaves',
-      'Pleat styles: Pinch pleat, eyelet, ripple fold, and rod pocket',
-      'Smooth, whisper-quiet tracks and decorative finial rods',
+      'Tailored dimensions custom made for each window span',
+      'Dual track configurations combining sheer daytime illumination and evening drapes',
+      'Pleat styles: Pinch pleat, ripple fold, eyelet, and American pleat options',
+      'Whisper-quiet tracks, motorized options, and decorative finial rods',
+    ],
+    suitableSpaces: [
+      'Villas & Independent Houses',
+      'Apartments & Residential Flats',
+      'Corporate Offices & Boardrooms',
+      'Commercial Showrooms & Studios',
     ],
     stylingTips: [
-      'Hang tracks close to the ceiling to visually elongate room height.',
-      'Combine sheers for daytime illumination with lined curtains for night privacy.',
-      'Select warm neutral palettes to keep spaces bright and airy.',
+      'Mount ceiling tracks flush to visually heighten room proportions.',
+      'Pair sheer linen-look fabrics with solid lined drapery for versatile lighting control.',
+      'Neutral tones (ivory, warm beige, soft grey) blend seamlessly with modern Indian interiors.',
     ],
     materialsAndCare: {
-      materials: 'Pure linen blends, poly-cottons, textured jacquards, and velvet accents.',
-      maintenance: 'Gentle machine wash or professional dry clean depending on fabric weave.',
-      recommendedRooms: 'Living rooms, master bedrooms, dining areas, and balconies.',
+      materials: 'Fine linen blends, poly-cottons, textured jacquards, and velvet accents.',
+      maintenance: 'Gentle dry clean or delicate machine cycle depending on chosen fabric weave.',
+      recommendedRooms: 'Living rooms, master suites, dining areas, balconies, and conference rooms.',
     },
   },
   {
@@ -85,70 +90,119 @@ export const productsData: ProductItem[] = [
     title: 'ZEBRA BLINDS',
     subtitle: 'Light, privacy and modern simplicity.',
     description:
-      'A versatile window solution that lets you control light while keeping a clean contemporary look.',
-    ctaText: 'EXPLORE BLINDS →',
+      'Dual-layer alternating sheer and solid fabric vanes that glide past each other to provide continuous light control from soft glow to complete privacy.',
+    ctaText: 'EXPLORE ZEBRA BLINDS →',
     category: 'Window Solutions',
     filterGroup: 'WINDOWS',
     whatsappMessage:
-      'Hi D&D Home Decor, I’m interested in zebra blinds and would like to explore patterns and pricing.',
-    heroImage:
-      '/images/products/zebra-blinds.png',
+      'Hello D&D Home Decor, I am interested in zebra blinds. Please share more details.',
+    heroImage: '/images/dd/blinds/blind-01.jpeg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Alternating sheer and solid fabric stripes for effortless light diffusion.',
+        url: '/images/dd/blinds/blind-24.jpeg',
+        caption: 'Flush window reveal installation with horizontal privacy vanes.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Minimalist window cassette matching contemporary trim.',
+        url: '/images/dd/blinds/blind-20.jpeg',
+        caption: 'Bedroom zebra blind providing refined daylight filtering.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Streamlined light control in modern study and home workspaces.',
+        url: '/images/dd/blinds/blind-16.jpeg',
+        caption: 'Contemporary dual-tone stripes complementing modern interiors.',
       },
     ],
     features: [
       'Dual-layer alternating sheer and privacy vanes',
-      'Precise transition from filtered daylight to full visual privacy',
+      'Precise transition from filtered daylight to visual privacy',
       'Sleek aluminum top-cassette concealing roll mechanism',
-      'Smooth ball-chain or motorized remote options',
+      'Smooth ball-chain control or automated motorized operation',
+    ],
+    suitableSpaces: [
+      'Apartments & Flats',
+      'Bedrooms & Study Rooms',
+      'Modern Office Workspaces',
+      'Balconies & Utility Areas',
     ],
     stylingTips: [
       'Align stripes horizontally to soften harsh afternoon glare.',
-      'Choose soft grey or beige tones to complement modern wall colors.',
-      'Ideal for windows above desks or counters where fabric pooling is impractical.',
+      'Select neutral charcoal, beige or warm grey tones to pair with contemporary wall colors.',
+      'Ideal for windows above desks, kitchen slabs, or counters.',
     ],
     materialsAndCare: {
       materials: 'Anti-static woven polyester with thermal-sealed non-fray edges.',
       maintenance: 'Occasional light feather dusting or gentle damp cloth wipe.',
-      recommendedRooms: 'Bedrooms, study rooms, apartment balconies, and living niches.',
+      recommendedRooms: 'Bedrooms, study rooms, home offices, and apartment living niches.',
+    },
+  },
+  {
+    slug: 'roller-blinds',
+    number: '03',
+    title: 'ROLLER & ROMAN BLINDS',
+    subtitle: 'Streamlined minimalism for contemporary spaces.',
+    description:
+      'Clean architectural window solutions offering high performance light blocking and solar heat reduction with an ultra-compact footprint.',
+    ctaText: 'EXPLORE ROLLER BLINDS →',
+    category: 'Window Solutions',
+    filterGroup: 'WINDOWS',
+    whatsappMessage:
+      'Hello D&D Home Decor, I am interested in roller and roman blinds. Please share fabric options and details.',
+    heroImage: '/images/dd/blinds/blind-06.jpeg',
+    galleryImages: [
+      {
+        url: '/images/dd/blinds/blind-13.jpeg',
+        caption: 'Streamlined roller blind installation for study room windows.',
+      },
+      {
+        url: '/images/dd/blinds/blind-25.jpeg',
+        caption: 'Clean window finish preserving natural view and privacy.',
+      },
+      {
+        url: '/images/dd/blinds/blind-22.jpeg',
+        caption: 'Compact profile fitting neatly inside window reveals.',
+      },
+    ],
+    features: [
+      'Blackout and solar sunscreen fabric choices',
+      'Roman fold configurations creating soft horizontal fabric tiers',
+      'Heavy-duty aluminum roller tubes ensuring straight hang without bowing',
+      'Child-safe control mechanisms and motorized remote integration',
+    ],
+    suitableSpaces: [
+      'Media Rooms & Home Theatres',
+      'Executive Office Cabins',
+      'Bedrooms requiring full morning blackout',
+      'Sunny south-facing windows',
+    ],
+    stylingTips: [
+      'Install inside the window recess for a tailored architectural look.',
+      'Layer a roller blackout behind sheer curtains for the ultimate balance of beauty and utility.',
+    ],
+    materialsAndCare: {
+      materials: 'UV-resistant coated fabrics, blackout fiberglass weaves, and textured poly blends.',
+      maintenance: 'Wipe clean with a microfiber cloth and mild soapy water.',
+      recommendedRooms: 'Bedrooms, media rooms, home offices, and meeting spaces.',
     },
   },
   {
     slug: 'pvc-blinds',
-    number: '03',
-    title: 'PVC BLINDS',
-    subtitle: 'Practical. Clean. Versatile.',
+    number: '04',
+    title: 'PVC & VENETIAN BLINDS',
+    subtitle: 'Durable. Moisture-resistant. Easy maintenance.',
     description:
-      'A simple window treatment solution for spaces where functionality and easy maintenance matter.',
-    ctaText: 'DISCOVER MORE →',
+      'Engineered for areas subject to humidity, grease, and direct splash. Wipe-clean slats offer precise angle tilt to direct sunlight without sacrificing durability.',
+    ctaText: 'EXPLORE PVC BLINDS →',
     category: 'Window Solutions',
     filterGroup: 'WINDOWS',
     whatsappMessage:
-      'Hi D&D Home Decor, I’m interested in PVC blinds for practical and moisture-prone spaces.',
-    heroImage:
-      '/images/products/pvc-blinds.png',
+      'Hello D&D Home Decor, I am interested in PVC and Venetian blinds for practical and moisture-prone areas.',
+    heroImage: '/images/products/pvc-blinds.png',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1000&q=80',
+        url: '/images/dd/blinds/blind-15.jpeg',
         caption: 'Moisture-resistant slat treatments tailored for kitchen window spans.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Clean, wipeable slats resisting humidity and heat.',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=80',
+        url: '/images/dd/blinds/blind-18.jpeg',
         caption: 'Compact profile fitting neatly within window frame reveals.',
       },
     ],
@@ -156,152 +210,339 @@ export const productsData: ProductItem[] = [
       '100% moisture and humidity resistant construction',
       'Wipe-clean surface that resists dust, grease and splatters',
       'Precision tilt wand for angle-specific light adjustment',
-      'Durable UV-stabilized material that avoids warping and discoloration',
+      'UV-stabilized material that resists warping in sunny conditions',
+    ],
+    suitableSpaces: [
+      'Kitchens & Wash Areas',
+      'Bathrooms & Powder Rooms',
+      'Utility Balconies',
+      'Commercial Pantries',
     ],
     stylingTips: [
-      'Fit within the window reveal for a flush, architectural appearance.',
-      'Pair neutral slats with warm wall colors to balance clean functionality with comfort.',
-      'A go-to solution for kitchen wash areas and utility zones.',
+      'Fit within the window reveal for a flush, uncluttered appearance.',
+      'Neutral tones balance functional durability with warmth.',
     ],
     materialsAndCare: {
-      materials: 'High-density extruded PVC with UV-inhibitor coating.',
-      maintenance: 'Wipes clean in seconds with soapy water and microfiber sponge.',
+      materials: 'High-density extruded PVC and aluminum alloys with UV-inhibitor coating.',
+      maintenance: 'Wipes clean in seconds with soapy water and sponge.',
       recommendedRooms: 'Kitchens, utility spaces, bathrooms, and high-humidity areas.',
     },
   },
   {
     slug: 'custom-sofas',
-    number: '04',
-    title: 'CUSTOM SOFAS',
-    subtitle: 'Made around your space.',
+    number: '05',
+    title: 'CUSTOMISED SOFAS',
+    subtitle: 'Designed around your space and comfort.',
     description:
-      'Bring comfort and character into your living room with sofa designs selected around your space, style and everyday needs.',
+      'Bring character and long-lasting comfort into your living spaces with custom-crafted sofas, sectionals, and bespoke seating created to fit your room dimensions and preferred upholstery.',
     ctaText: 'EXPLORE SOFAS →',
-    category: 'Living Space',
-    filterGroup: 'LIVING',
+    category: 'Customised Furniture',
+    filterGroup: 'FURNITURE',
     whatsappMessage:
-      'Hi D&D Home Decor, I’m interested in custom sofas and would like to discuss sizing, fabrics and designs.',
-    heroImage:
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=80',
+      'Hello D&D Home Decor, I am interested in customised sofas. I would like to know more about the available options.',
+    heroImage: '/images/dd/furniture/furniture-08.jpeg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Tactile textured upholstery with deep ergonomic seating comfort.',
+        url: '/images/dd/furniture/furniture-10.jpeg',
+        caption: 'Custom upholstered living room sofa with deep ergonomic seating.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80',
-        caption: 'L-shaped sectional proportioned to anchor family gatherings.',
+        url: '/images/dd/furniture/furniture-14.jpeg',
+        caption: 'Family lounge sectional tailored to room proportions.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Handcrafted solid framework with tailored piping and cushion stitch details.',
+        url: '/images/dd/furniture/furniture-21.jpeg',
+        caption: 'Solid framework with tailored piping and cushion stitch details.',
       },
     ],
     features: [
-      'Tailored dimensions: 3-seater, L-shaped sectional, or modular configs',
-      'Premium stain-guarded fabric, chenille, bouclé, and leatherette swatches',
-      'High-resilience memory foam core for lasting ergonomic support',
-      'Solid kiln-dried internal hardwood structure for long-term stability',
+      'Made-to-measure dimensions: 3-seater, L-shaped sectional, or modular configs',
+      'Extensive selection of fabrics, textured bouclé, chenille, and leatherette swatches',
+      'High-resilience foam core for enduring ergonomic support',
+      'Solid hardwood internal framework built for long-term stability',
+    ],
+    suitableSpaces: [
+      'Living Rooms & Family Lounges',
+      'Apartment Drawing Rooms',
+      'Villa Living Niches',
+      'Office Reception & Lounge Areas',
     ],
     stylingTips: [
-      'Select sofa depth based on how your family relaxes—deep seating for lounging.',
-      'Layer with contrasting cushions in earthy terracotta and warm mustard tones.',
+      'Select sofa depth based on lifestyle—deeper seating for family lounging, firmer depth for formal sitting.',
+      'Pair neutral sofa upholstery with bold accent cushions in terracotta or warm gold.',
       'Allow at least 18 inches of clearance between the coffee table and sofa edge.',
     ],
     materialsAndCare: {
-      materials: 'Kiln-dried hardwood frame, high-density foam, performance upholstery.',
-      maintenance: 'Regular vacuuming with upholstery nozzle; spot-clean stains promptly.',
+      materials: 'Seasoned hardwood frame, high-density comfort foam, performance upholstery.',
+      maintenance: 'Regular vacuuming with upholstery nozzle; prompt spot cleaning for spills.',
       recommendedRooms: 'Formal living rooms, family lounges, and media rooms.',
     },
   },
   {
-    slug: 'wallpapers',
-    number: '05',
-    title: 'WALLPAPERS',
-    subtitle: 'Give your walls a point of view.',
+    slug: 'accent-chairs',
+    number: '06',
+    title: 'CHAIRS & ACCENT SEATING',
+    subtitle: 'Distinctive character for every corner.',
     description:
-      'Patterns, textures and tones that can turn an ordinary wall into a defining feature of the room.',
-    ctaText: 'EXPLORE WALLPAPERS →',
-    category: 'Wall Treatments',
-    filterGroup: 'WALLS',
+      'Individually tailored accent chairs, lounge armchairs, and dining chairs. From tufted diamond-quilted statement chairs to understated reading armchairs.',
+    ctaText: 'EXPLORE CHAIRS →',
+    category: 'Customised Furniture',
+    filterGroup: 'FURNITURE',
     whatsappMessage:
-      'Hi D&D Home Decor, I’m interested in wallpapers and would like to see catalog designs for accent walls.',
-    heroImage:
-      '/images/products/wallpapers.jpg',
+      'Hello D&D Home Decor, I am interested in customised chairs and accent seating options.',
+    heroImage: '/images/dd/furniture/furniture-01.jpeg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Subtle textured grasscloth giving tactile warmth to bed accent wall.',
+        url: '/images/dd/furniture/furniture-02.jpeg',
+        caption: 'Bespoke accent armchair tailored for reading corners.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Modern botanical and geometric motifs with rich matte undertones.',
+        url: '/images/dd/furniture/furniture-04.jpeg',
+        caption: 'Ergonomic upholstered chair with modern metallic accents.',
       },
       {
-        url: 'https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Seamless finish with delicate metallic and textured embossings.',
+        url: '/images/dd/furniture/furniture-31.jpeg',
+        caption: 'Custom upholstered headboard and bedroom paneling.',
       },
     ],
     features: [
-      'Textured vinyl, non-woven, metallic, and natural fiber collections',
-      'Washable and scratch-resistant surface coatings',
-      'Breathable backings preventing moisture entrapment',
-      'Precise pattern matching and seamless installation',
+      'Diamond tufting, fluted channel stitching, and custom piping options',
+      'Solid wood and powder-coated steel/brass leg finishes',
+      'Compact footprint that easily slots into reading corners, bedrooms, and foyers',
+      'Custom fabric and leatherette upholstery to match room palettes',
+    ],
+    suitableSpaces: [
+      'Bedroom Corners & Reading Nooks',
+      'Living Room Accent Positions',
+      'Dressing Tables & Foyers',
+      'Executive Cabins & Receptions',
     ],
     stylingTips: [
-      'Choose a focal wall behind the bed or TV console for maximum visual impact.',
-      'Pair textured linen-look wallpaper with brass or warm wooden wall sconces.',
-      'Small rooms benefit from soft vertical textures that make ceilings feel higher.',
+      'Use a contrasting accent color to create a striking focal point.',
+      'Pair with a small brass or marble side table and ambient floor lamp.',
     ],
     materialsAndCare: {
-      materials: 'Heavyweight non-woven substrate with textured matte vinyl coatings.',
-      maintenance: 'Gently wipe with dry cloth or lightly damp sponge; avoid abrasive scrubbers.',
-      recommendedRooms: 'Accent walls in living rooms, bedrooms, foyers, and dining niches.',
+      materials: 'Solid frame, molded foam cushioning, durable upholstery fabrics.',
+      maintenance: 'Light fabric brush or vacuum; wipe metallic leg tips with dry microfiber.',
+      recommendedRooms: 'Bedrooms, living rooms, foyers, and study corners.',
     },
   },
   {
-    slug: 'home-decor',
-    number: '06',
-    title: 'HOME DÉCOR',
-    subtitle: 'The details complete the space.',
+    slug: 'centre-tables',
+    number: '07',
+    title: 'CENTRE & SIDE TABLES',
+    subtitle: 'The functional centerpiece of the living space.',
     description:
-      'Thoughtfully chosen finishing details that bring furniture, fabrics, walls and interiors together.',
-    ctaText: 'DISCOVER DÉCOR →',
-    category: 'Finishing Details',
-    filterGroup: 'DECOR',
+      'Bespoke centre tables, nested coffee tables, and side tables crafted to anchor your seating arrangements and complete your living room ensemble.',
+    ctaText: 'EXPLORE TABLES →',
+    category: 'Customised Furniture',
+    filterGroup: 'FURNITURE',
     whatsappMessage:
-      'Hi D&D Home Decor, I’m looking for home décor finishing details, cushions and lighting accents.',
-    heroImage:
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1400&q=80',
+      'Hello D&D Home Decor, I am interested in centre tables and living room furniture.',
+    heroImage: '/images/dd/furniture/furniture-08.jpeg',
     galleryImages: [
       {
-        url: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Curated artisanal ceramic vessels and sculptural tabletop accents.',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Architectural mood lighting casting warm evening warmth.',
-      },
-      {
-        url: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80',
-        caption: 'Layered hand-loomed cushions and soft throws in organic earthy tones.',
+        url: '/images/dd/furniture/furniture-08.jpeg',
+        caption: 'Gold-finish geometric side table with marble top alongside lounge seating.',
       },
     ],
     features: [
-      'Artisanal ceramic vases, stoneware plinths, and tabletop objects',
-      'Architectural table lamps and warm ambient lighting fixtures',
-      'Bespoke cushions, floor rugs, and breathable cotton-linen throws',
-      'Decorative wall mirrors and framed art pieces designed for Indian homes',
+      'Custom table heights proportioned to your sofa seat height',
+      'Choices of polished marble tops, solid timber, and brushed metallic frames',
+      'Nested designs for flexible entertaining and space optimization',
+      'Protective floor pads preventing scratching on marble and vitrified tiles',
+    ],
+    suitableSpaces: [
+      'Living Room Lounges',
+      'Formal Drawing Areas',
+      'Reception Areas',
     ],
     stylingTips: [
-      'Group objects in odd numbers (groups of 3 or 5) for effortless visual balance.',
-      'Mix rough stone or ceramics with smooth wood and soft fabrics.',
-      'Use lighting at three different heights (ceiling, floor, and table) for depth.',
+      'Ensure centre table height is within 1 to 2 inches of your sofa seat cushion.',
+      'Style with a decorative tray, books, and artisanal ceramic accents.',
     ],
     materialsAndCare: {
-      materials: 'Natural clay, brushed brass, handwoven linen, and sustainably sourced timber.',
-      maintenance: 'Dust weekly with a soft cloth; gently air cushions and throws.',
-      recommendedRooms: 'Coffee tables, console tops, entryway niches, and bedside stands.',
+      materials: 'Natural stone/marble, seasoned timber, and electroplated steel.',
+      maintenance: 'Use coasters under hot beverages; wipe with a soft microfiber cloth.',
+      recommendedRooms: 'Living rooms, lounges, and office receptions.',
+    },
+  },
+  {
+    slug: 'mattresses',
+    number: '08',
+    title: 'BRANDED MATTRESSES',
+    subtitle: 'Official dealer for India’s leading sleep brands.',
+    description:
+      'Explore mattress options from reputed brands available through D&D Home Decor. We are authorized dealers in our area in Bengaluru for Kurlon, Duroflex, Sobha, Peps, Springfit, and Restolex.',
+    ctaText: 'ENQUIRE ON MATTRESSES →',
+    category: 'Bedding & Comfort',
+    filterGroup: 'MATTRESSES',
+    whatsappMessage:
+      'Hello D&D Home Decor, I am interested in branded mattresses and would like to know more about available options.',
+    heroImage: '/images/products/bedroom.png',
+    galleryImages: [
+      {
+        url: '/images/dd/furniture/furniture-31.jpeg',
+        caption: 'Custom upholstered headboard paired with premium mattress comfort.',
+      },
+      {
+        url: '/images/dd/furniture/furniture-29.jpeg',
+        caption: 'Bedroom interior styling with tailored headboard panel.',
+      },
+    ],
+    features: [
+      'Official authorized dealer in Bengaluru for top mattress brands',
+      'Brand portfolio: Kurlon, Duroflex, Sobha, Peps, Springfit, and Restolex',
+      'Available in King, Queen, Double, and custom bedroom dimensions',
+      'Technologies: Pocket spring, memory foam, natural latex, and orthopedic firm support',
+    ],
+    suitableSpaces: [
+      'Master Bedrooms & Guest Suites',
+      'Villas & Residential Apartments',
+      'Hospitality & Boutique Residences',
+    ],
+    stylingTips: [
+      'Pair with a custom upholstered headboard for an integrated bedroom aesthetic.',
+      'Use a breathable mattress protector to prolong mattress life and cleanliness.',
+    ],
+    materialsAndCare: {
+      materials: 'High-resilience foam, pocketed coils, natural latex, and quilted jacquard fabrics.',
+      maintenance: 'Rotate head-to-toe every 3 to 6 months for even wear.',
+      recommendedRooms: 'Master bedrooms, children rooms, and guest suites.',
+    },
+  },
+  {
+    slug: 'wallpapers',
+    number: '09',
+    title: 'WALLPAPERS & WALL TREATMENTS',
+    subtitle: 'Give your walls character and depth.',
+    description:
+      'Curated wallpaper collections featuring subtle textures, organic grasscloths, and contemporary geometric motifs designed to turn ordinary accent walls into focal points.',
+    ctaText: 'EXPLORE WALLPAPERS →',
+    category: 'Wall & Home Décor',
+    filterGroup: 'WALLS',
+    whatsappMessage:
+      'Hello D&D Home Decor, I am interested in wallpapers and wall decor options for my space.',
+    heroImage: '/images/products/wallpapers.jpg',
+    galleryImages: [
+      {
+        url: '/images/products/wallpapers.jpg',
+        caption: 'Textured wallpaper finish adding tactile warmth to interior walls.',
+      },
+    ],
+    features: [
+      'Textured vinyl, non-woven, and natural fiber designs',
+      'Wipeable and scratch-resistant surface finishes',
+      'Breathable backings suitable for Indian weather conditions',
+      'Professional alignment and pattern matching during application',
+    ],
+    suitableSpaces: [
+      'Living Room TV Unit Accent Walls',
+      'Master Bedroom Headboard Walls',
+      'Dining Room Niches & Foyers',
+      'Commercial Reception Backdrops',
+    ],
+    stylingTips: [
+      'Choose a single focal wall rather than all four walls to maintain room spaciousness.',
+      'Pair textured linen-look wallpaper with warm brass lighting sconces.',
+    ],
+    materialsAndCare: {
+      materials: 'Non-woven substrate with textured matte vinyl coatings.',
+      maintenance: 'Gently wipe with a dry cloth or lightly damp sponge.',
+      recommendedRooms: 'Living rooms, master bedrooms, foyers, and dining niches.',
+    },
+  },
+  {
+    slug: 'carpets-mats',
+    number: '10',
+    title: 'CARPETS, RUGS & MATS',
+    subtitle: 'Warmth, texture and definition underfoot.',
+    description:
+      'High-quality carpets, designer area rugs, runners, and durable mats. Woven textures that anchor furniture groupings and add acoustic comfort to living spaces.',
+    ctaText: 'EXPLORE CARPETS & MATS →',
+    category: 'Wall & Home Décor',
+    filterGroup: 'DECOR',
+    whatsappMessage:
+      'Hello D&D Home Decor, I am interested in carpets, rugs and high-quality mats.',
+    heroImage: '/images/dd/carpets-mats/carpet-mat-01.jpeg',
+    galleryImages: [
+      {
+        url: '/images/dd/carpets-mats/carpet-mat-03.jpeg',
+        caption: 'Textured geometric living room area rug sample.',
+      },
+      {
+        url: '/images/dd/carpets-mats/carpet-mat-05.jpeg',
+        caption: 'High-density woven runner suitable for corridors and bedside.',
+      },
+      {
+        url: '/images/dd/carpets-mats/carpet-mat-14.jpeg',
+        caption: 'Contemporary woven carpet collection with subtle luster.',
+      },
+    ],
+    features: [
+      'High-density woven fibers resistant to daily foot traffic',
+      'Organic marble, geometric, and abstract contemporary patterns',
+      'Available in standard room sizes and customized lengths',
+      'Anti-skid backing options for marble and tiled floors',
+    ],
+    suitableSpaces: [
+      'Living Room Seating Areas',
+      'Dining Tables & Foyers',
+      'Bedside Runners',
+      'Executive Office Lounges',
+    ],
+    stylingTips: [
+      'Front legs of all main seating pieces should ideally rest on the area rug.',
+      'Leave 12 to 18 inches of exposed floor around the carpet border for visual proportion.',
+    ],
+    materialsAndCare: {
+      materials: 'High-density synthetic fiber, poly-wool blends, and soft woven yarn.',
+      maintenance: 'Regular vacuuming; prompt blotting for accidental spills.',
+      recommendedRooms: 'Living areas, bedrooms, hallways, and dining spaces.',
+    },
+  },
+  {
+    slug: 'home-furnishings',
+    number: '11',
+    title: 'HOME FURNISHINGS & DÉCOR',
+    subtitle: 'Finishing touches that complete your interiors.',
+    description:
+      'Bed spreads, runners, sofa covers, ready-made curtains, bath towels, and decorative accents carefully selected to tie your home together.',
+    ctaText: 'EXPLORE HOME FURNISHINGS →',
+    category: 'Wall & Home Décor',
+    filterGroup: 'DECOR',
+    whatsappMessage:
+      'Hello D&D Home Decor, I am interested in bed spreads, runners, sofa covers and home furnishings.',
+    heroImage: '/images/dd/home-decor/home-decor-01.jpeg',
+    galleryImages: [
+      {
+        url: '/images/dd/furniture/furniture-08.jpeg',
+        caption: 'Fitted stretch sofa covers and accent cushions.',
+      },
+      {
+        url: '/images/dd/home-decor/home-decor-01.jpeg',
+        caption: 'Wood-framed botanical decorative panel.',
+      },
+    ],
+    features: [
+      'Protective and decorative sofa covers in stretch textured fabrics',
+      'Soft cotton bed spreads, designer runners, and cozy throws',
+      'High-absorbency luxury bath towels for everyday comfort',
+      'Ready-made curtains for rapid installation and immediate use',
+    ],
+    suitableSpaces: [
+      'Bedrooms & Living Spaces',
+      'Guest Suites',
+      'Apartments & Rental Homes',
+    ],
+    stylingTips: [
+      'Layer neutral bedding with a richly textured runner at the foot of the bed.',
+      'Use sofa covers to refresh living room furniture without replacing upholstery.',
+    ],
+    materialsAndCare: {
+      materials: 'Pure cotton, linen blends, microfibers, and stretch jacquards.',
+      maintenance: 'Machine wash friendly on gentle cycle with mild detergent.',
+      recommendedRooms: 'Bedrooms, living rooms, and bathrooms.',
     },
   },
 ];

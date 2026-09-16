@@ -49,15 +49,27 @@ export const Footer: React.FC = () => {
           {/* Location & Quick Contact */}
           <div className="md:col-span-3 space-y-4">
             <span className="text-[11px] uppercase tracking-widest font-medium text-stone-400 block">
-              Location &amp; Enquiries
+              Showroom &amp; Enquiries
             </span>
-            <div className="space-y-1.5 text-sm text-stone-300 font-light">
-              <p>{businessConfig.locationLabel}</p>
+            <div className="space-y-1 text-xs sm:text-sm text-stone-300 font-light">
+              <p className="font-medium text-ivory">{businessConfig.name}</p>
+              <a
+                href={businessConfig.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-warm-gold-light transition-colors block"
+              >
+                {businessConfig.address}
+              </a>
+              <p className="text-warm-gold-light pt-1">Call: {businessConfig.primaryPhone}</p>
+              {businessConfig.secondaryPhone && (
+                <p className="text-stone-400">Alt: {businessConfig.secondaryPhone}</p>
+              )}
             </div>
 
             <div className="pt-3">
               <a
-                href={getWhatsAppUrl()}
+                href={getWhatsAppUrl(businessConfig.contextualMessages.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.14em] text-espresso bg-warm-gold hover:bg-warm-gold-light px-4 py-2.5 rounded font-medium transition-colors"
@@ -69,11 +81,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Subtle Disclaimer */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <p>© {new Date().getFullYear()} {businessConfig.name}. All rights reserved.</p>
-          <p className="text-[11px] text-stone-500/80 italic text-center sm:text-right">
-            {businessConfig.demoDisclaimer}
+          <p className="text-xs text-stone-400 text-center sm:text-right">
+            Bengaluru, Karnataka • Customized Curtains, Blinds, Furniture &amp; Mattresses
           </p>
         </div>
       </div>

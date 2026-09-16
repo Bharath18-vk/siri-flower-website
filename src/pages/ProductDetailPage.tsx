@@ -16,7 +16,7 @@ export const ProductDetailPage: React.FC = () => {
   const { prev, next } = getAdjacentProducts(product.slug);
 
   return (
-    <div className="min-h-screen pt-28 sm:pt-36">
+    <div className="min-h-screen pt-28 sm:pt-36 bg-ivory">
       {/* Back to Products Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
         <Link
@@ -60,7 +60,7 @@ export const ProductDetailPage: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-5xl text-espresso font-normal leading-[1.1] tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-espresso font-normal leading-[1.1] tracking-tight">
               {product.title}
             </h1>
 
@@ -71,6 +71,22 @@ export const ProductDetailPage: React.FC = () => {
             <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
               {product.description}
             </p>
+
+            {/* Suitable Spaces */}
+            {product.suitableSpaces && (
+              <div className="pt-2 space-y-2">
+                <span className="text-[11px] uppercase tracking-wider font-semibold text-espresso block">
+                  Recommended For:
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {product.suitableSpaces.map((sp) => (
+                    <span key={sp} className="px-3 py-1 rounded text-xs bg-cream/70 border border-stone-200 text-stone-700 font-light">
+                      {sp}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Direct WhatsApp CTA Button */}
             <div className="pt-3 space-y-3">
@@ -85,7 +101,7 @@ export const ProductDetailPage: React.FC = () => {
               </a>
 
               <p className="text-[11px] text-stone-400 font-light">
-                Direct consultation for sizing, fabrics, patterns &amp; pricing.
+                Direct consultation for sizing, fabrics, patterns, site visits &amp; options.
               </p>
             </div>
           </div>
@@ -101,7 +117,7 @@ export const ProductDetailPage: React.FC = () => {
               <div className="flex items-center space-x-2 text-warm-gold-dark">
                 <Check className="w-4 h-4" />
                 <span className="text-xs uppercase tracking-widest font-semibold text-espresso">
-                  Product Features
+                  Key Features &amp; Options
                 </span>
               </div>
               <ul className="space-y-2.5">
@@ -132,7 +148,7 @@ export const ProductDetailPage: React.FC = () => {
                   <p>{product.materialsAndCare.maintenance}</p>
                 </div>
                 <div>
-                  <strong className="font-medium text-espresso block">Recommended Rooms:</strong>
+                  <strong className="font-medium text-espresso block">Recommended Spaces:</strong>
                   <p>{product.materialsAndCare.recommendedRooms}</p>
                 </div>
               </div>
@@ -143,7 +159,7 @@ export const ProductDetailPage: React.FC = () => {
               <div className="flex items-center space-x-2 text-warm-gold-dark">
                 <span className="w-2 h-2 rounded-full bg-warm-gold" />
                 <span className="text-xs uppercase tracking-widest font-semibold text-espresso">
-                  Styling &amp; Planning Tips
+                  Styling &amp; Space Planning
                 </span>
               </div>
               <ul className="space-y-2.5">
@@ -160,44 +176,46 @@ export const ProductDetailPage: React.FC = () => {
       </section>
 
       {/* Gallery of Spaces */}
-      <section className="py-20 sm:py-24 bg-ivory">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="max-w-2xl space-y-2">
-            <span className="text-[11px] uppercase tracking-widest font-semibold text-stone-400 block">
-              VISUAL REFERENCES
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-espresso font-normal">
-              SPACES &amp; DETAILS
-            </h2>
-            <p className="text-xs sm:text-sm text-stone-500 font-light">
-              Representative design references illustrating material textures and room styling.
-            </p>
-          </div>
+      {product.galleryImages && product.galleryImages.length > 0 && (
+        <section className="py-20 sm:py-24 bg-ivory">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="max-w-2xl space-y-2">
+              <span className="text-[11px] uppercase tracking-widest font-semibold text-stone-400 block">
+                AUTHENTIC PHOTOGRAPHY
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-espresso font-normal">
+                INSTALLATIONS &amp; DETAILS
+              </h2>
+              <p className="text-xs sm:text-sm text-stone-500 font-light">
+                Photographs illustrating fabric draping, textures, and bespoke room finishes.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {product.galleryImages.map((img, idx) => (
-              <div
-                key={idx}
-                className="group relative overflow-hidden rounded bg-stone-200 shadow-subtle flex flex-col"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={img.url}
-                    alt={img.caption}
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+              {product.galleryImages.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="group relative overflow-hidden rounded bg-stone-200 shadow-subtle flex flex-col"
+                >
+                  <div className="aspect-[4/3] overflow-hidden bg-stone-200">
+                    <img
+                      src={img.url}
+                      alt={img.caption}
+                      loading="lazy"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-4 bg-cream/40 border-t border-stone-200 flex-1">
+                    <p className="text-xs text-stone-600 font-light">
+                      {img.caption}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4 bg-cream/40 border-t border-stone-200 flex-1">
-                  <p className="text-xs text-stone-600 font-light">
-                    {img.caption}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Adjacent Product Navigation */}
       <section className="border-t border-stone-200 py-10 bg-cream/20">
