@@ -349,7 +349,19 @@ export const AdminGalleryPage: React.FC = () => {
               ) : (
                 <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
               )}
-              <span>{notification.message}</span>
+              <span>
+                {notification.message}
+                {notification.type === 'success' && (
+                  <a
+                    href="/gallery"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline font-semibold ml-2 hover:text-green-950"
+                  >
+                    View on Live Website ↗
+                  </a>
+                )}
+              </span>
             </div>
             <button
               onClick={() => setNotification(null)}

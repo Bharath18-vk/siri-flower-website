@@ -44,7 +44,9 @@ export function useGallery() {
     async function fetchDynamicGallery() {
       setIsLoading(true);
       try {
-        const response = await fetch('/api/gallery');
+        const response = await fetch(`/api/gallery?_t=${Date.now()}`, {
+          cache: 'no-store',
+        });
         if (!response.ok) return;
 
         const data = await response.json();

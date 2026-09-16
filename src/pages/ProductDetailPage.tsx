@@ -4,16 +4,46 @@ import { MessageCircle, ArrowLeft, ArrowRight, Check, Sparkles } from 'lucide-re
 import { getProductBySlug, getAdjacentProducts } from '../data/products';
 import { getWhatsAppUrl } from '../data/config';
 import { ContactBanner } from '../components/ContactBanner';
+import { useGallery } from '../hooks/useGallery';
 
 export const ProductDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const product = slug ? getProductBySlug(slug) : undefined;
+
+  const { items: allGalleryItems } = useGallery();
 
   if (!product) {
     return <Navigate to="/products" replace />;
   }
 
   const { prev, next } = getAdjacentProducts(product.slug);
+
+  // Dynamic uploads matching this product's category
+  const dynamicPhotos = allGalleryItems
+    .filter((item) => {
+      const cat = product.category.toLowerCase();
+      const label = item.categoryLabel.toLowerCase();
+      const isMatch =
+        label.includes(cat) ||
+        cat.includes(label) ||
+        (cat.includes('curtain') && item.category === 'CURTAINS') ||
+        (cat.includes('blind') && item.category === 'BLINDS') ||
+        (cat.includes('furniture') && item.category === 'FURNITURE') ||
+        (cat.includes('sofa') && item.category === 'FURNITURE') ||
+        (cat.includes('chair') && item.category === 'FURNITURE') ||
+        (cat.includes('carpet') && item.category === 'CARPETS') ||
+        (cat.includes('mat') && item.category === 'CARPETS') ||
+        (cat.includes('mattress') && label.includes('mattress')) ||
+        (cat.includes('wallpaper') && label.includes('wallpaper')) ||
+        (cat.includes('decor') && item.category === 'DECOR');
+      return isMatch && !(product.galleryImages || []).some((p) => p.url === item.imageUrl);
+    })
+    .map((item) => ({
+      url: item.imageUrl,
+      caption: item.caption || item.title || `${product.title} installation`,
+    }));
+
+  const combinedGalleryImages = [...dynamicPhotos, ...(product.galleryImages || [])];
 
   return (
     <div className="min-h-screen pt-28 sm:pt-36 bg-ivory">
@@ -176,7 +206,7 @@ export const ProductDetailPage: React.FC = () => {
       </section>
 
       {/* Gallery of Spaces */}
-      {product.galleryImages && product.galleryImages.length > 0 && (
+      {combinedGalleryImages && combinedGalleryImages.length > 0 && (
         <section className="py-20 sm:py-24 bg-ivory">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="max-w-2xl space-y-2">
@@ -192,7 +222,7 @@ export const ProductDetailPage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-              {product.galleryImages.map((img, idx) => (
+              {combinedGalleryImages.map((img, idx) => (
                 <div
                   key={idx}
                   className="group relative overflow-hidden rounded bg-stone-200 shadow-subtle flex flex-col"
