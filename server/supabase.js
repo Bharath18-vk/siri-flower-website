@@ -6,16 +6,50 @@ import { createClient } from '@supabase/supabase-js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const STORAGE_BUCKET = process.env.SUPABASE_STORAGE_BUCKET || 'gallery';
+function normalizeSupabaseUrl(raw) {
+  if (!raw) return '';
+  let url = String(raw).trim().replace(/^["']|["']$/g, '');
+
+  // Case 1: If user pasted dashboard URL: https://supabase.com/dashboard/project/<project-ref>...
+  const dashboardMatch = url.match(/supabase\.com\/dashboard\/project\/([a-zA-Z0-9_-]+)/i);
+  if (dashboardMatch) {
+    return `https://${dashboardMatch[1]}.supabase.co`;
+  }
+
+  // Case 2: Project URL with /rest/v1, /storage/v1, or /auth/v1 appended
+  url = url.replace(/\/rest\/v1.*$/i, '');
+  url = url.replace(/\/storage\/v1.*$/i, '');
+  url = url.replace(/\/auth\/v1.*$/i, '');
+
+  // Case 3: Trailing slashes
+  url = url.replace(/\/+$/, '');
+
+  // Case 4: Ensure https protocol if missing
+  if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+    url = `https://${url}`;
+  }
+
+  return url;
+}
+
+function normalizeSecretKey(raw) {
+  if (!raw) return '';
+  return String(raw).trim().replace(/^["']|["']$/g, '');
+}
+
+const rawUrl = process.env.SUPABASE_URL;
+const rawKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+const SUPABASE_URL = normalizeSupabaseUrl(rawUrl);
+const SUPABASE_SERVICE_ROLE_KEY = normalizeSecretKey(rawKey);
+const STORAGE_BUCKET = (process.env.SUPABASE_STORAGE_BUCKET || 'gallery').trim();
 
 const isSupabaseConfigured = Boolean(SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY);
 
 let supabase = null;
 if (isSupabaseConfigured) {
   supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
-  console.log('[Storage] Connected to Supabase Cloud PostgreSQL & Storage.');
+  console.log(`[Storage] Connected to Supabase Cloud PostgreSQL & Storage at: ${SUPABASE_URL}`);
 } else {
   console.log(
     '[Storage] Note: Supabase credentials not set. Using persistent local fallback (.data/uploads & .data/media.json).'
@@ -94,7 +128,7 @@ export async function uploadToStorage(fileBuffer, originalFilename, mimeType) {
   const uniqueName = `dd_${Date.now()}_${Math.random().toString(36).substring(2, 7)}_${cleanName}${ext}`;
 
   if (isSupabaseConfigured) {
-    const filePath = `gallery/${uniqueName}`;
+    const filePath = uniqueName;
     const { data, error } = await supabase.storage
       .from(STORAGE_BUCKET)
       .upload(filePath, fileBuffer, {
