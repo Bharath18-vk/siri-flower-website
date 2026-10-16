@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { siteContent } from '../data/content';
 import { getWhatsAppUrl } from '../data/config';
 import { MessageCircle } from 'lucide-react';
@@ -50,10 +50,10 @@ export const TransformationSection: React.FC = () => {
         {/* Action Button */}
         <div className="pt-2">
           <a
-            href={getWhatsAppUrl('Hi D&D Home Decor, I’d like to discuss transforming my home with your collections.')}
+            href={getWhatsAppUrl('Hello Siri Flower Decoration, I would like to consult on event floral decoration for an upcoming occasion.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2.5 px-6 py-3.5 bg-ivory text-espresso hover:bg-warm-gold hover:text-ivory transition-all duration-300 rounded font-medium text-xs uppercase tracking-[0.16em] shadow-luxury"
+            className="inline-flex items-center space-x-2.5 px-6 py-3.5 bg-ivory text-espresso hover:bg-warm-gold hover:text-espresso transition-all duration-300 rounded font-semibold text-xs uppercase tracking-[0.16em] shadow-luxury"
           >
             <MessageCircle className="w-4 h-4 text-green-600" />
             <span>Consult on WhatsApp</span>

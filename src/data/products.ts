@@ -1,7 +1,7 @@
 /**
- * D&D Home Decor — Centralized Product Catalog
- * Comprehensive authentic product catalog based on verified client offerings.
- * Real D&D photography is used for portfolio items.
+ * Siri Flower Decoration: Centralized Services & Offerings Catalog
+ * Comprehensive floral & event decoration offerings based in Bolarum, Secunderabad.
+ * Representative inspiration imagery clearly curated for client visualization.
  */
 
 export interface ProductItem {
@@ -12,7 +12,7 @@ export interface ProductItem {
   description: string;
   ctaText: string;
   category: string;
-  filterGroup: 'WINDOWS' | 'FURNITURE' | 'MATTRESSES' | 'WALLS' | 'DECOR';
+  filterGroup: 'ALL' | 'STAGES' | 'BACKDROPS' | 'ENTRANCE' | 'RECEPTION' | 'ARRANGEMENTS';
   whatsappMessage: string;
   heroImage: string;
   galleryImages: {
@@ -31,524 +31,279 @@ export interface ProductItem {
 
 export const productsData: ProductItem[] = [
   {
-    slug: 'curtains',
+    slug: 'wedding-stage-decoration',
     number: '01',
-    title: 'CUSTOMISED CURTAINS',
-    subtitle: 'Frame the light. Shape the mood.',
+    title: 'WEDDING STAGE DECORATION',
+    subtitle: 'Grand floral mandaps, floral arches, and thematic wedding stages.',
     description:
-      'Beautifully customised curtains designed around your windows, interiors and aesthetic requirements. From soft sheer textures that diffuse natural daylight to rich pleated drapes that offer privacy and warmth.',
-    ctaText: 'EXPLORE CURTAINS →',
-    category: 'Window Solutions',
-    filterGroup: 'WINDOWS',
+      'We design captivating wedding stages customized to your venue, theme, and family traditions. From cascading fresh jasmine and rose garlands to modern architectural floral structures with warm ambient illumination, every setting is designed to honor your special day.',
+    ctaText: 'EXPLORE STAGE DECOR →',
+    category: 'Wedding Stages',
+    filterGroup: 'STAGES',
     whatsappMessage:
-      'Hello D&D Home Decor, I am interested in customised curtains. I would like to know more about the available options.',
-    heroImage: '/images/dd/curtains/curtain-02.jpeg',
+      'Hello Siri Flower Decoration, I am interested in wedding stage decoration. Could you please share available design concepts and details?',
+    heroImage: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       {
-        url: '/images/dd/curtains/curtain-12.jpeg',
-        caption: 'Symmetrical floor-to-ceiling sheer and drapery installation.',
+        url: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Traditional Indian wedding mandap with fresh floral canopies.',
       },
       {
-        url: '/images/dd/curtains/curtain-05.jpeg',
-        caption: 'Recessed ceiling track drapes in modern Bengaluru apartment.',
+        url: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Hanging jasmine garlands and floral chandeliers over stage.',
       },
       {
-        url: '/images/dd/curtains/curtain-08.jpeg',
-        caption: 'Warm ambient room composition with layered sheer and blackout panels.',
-      },
-      {
-        url: '/images/dd/curtains/curtain-03.jpeg',
-        caption: 'Custom drop sheer panels tailored for bedroom window reveal.',
+        url: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Lush rose and chrysanthemum framed royal wedding backdrop.',
       },
     ],
     features: [
-      'Tailored dimensions custom made for each window span',
-      'Dual track configurations combining sheer daytime illumination and evening drapes',
-      'Pleat styles: Pinch pleat, ripple fold, eyelet, and American pleat options',
-      'Whisper-quiet tracks, motorized options, and decorative finial rods',
+      'Bespoke mandap architecture (four-pillar, temple dome, hexagonal, open canopy)',
+      'Fresh flower selection: Dutch roses, local jasmine, orange/yellow marigolds, and orchids',
+      'Thematic stage drapery with integrated soft amber LED lighting and spotlights',
+      'Customized seating backdrops for bride, groom, and family elders',
     ],
     suitableSpaces: [
-      'Villas & Independent Houses',
-      'Apartments & Residential Flats',
-      'Corporate Offices & Boardrooms',
-      'Commercial Showrooms & Studios',
+      'Convention Halls & Kalyana Mandapams',
+      'Open Lawns & Resort Grounds',
+      'Hotel Ballrooms & Banquet Venues',
+      'Traditional Courtyards & Temple Premises',
     ],
     stylingTips: [
-      'Mount ceiling tracks flush to visually heighten room proportions.',
-      'Pair sheer linen-look fabrics with solid lined drapery for versatile lighting control.',
-      'Neutral tones (ivory, warm beige, soft grey) blend seamlessly with modern Indian interiors.',
+      'Complement stage drapery with warm 2700K lighting to enhance floral colors in wedding photography.',
+      'Blend fragrant jasmine with structured roses for both visual depth and welcoming fragrance.',
+      'Maintain clear elevated sightlines from all guest seating angles.',
     ],
     materialsAndCare: {
-      materials: 'Fine linen blends, poly-cottons, textured jacquards, and velvet accents.',
-      maintenance: 'Gentle dry clean or delicate machine cycle depending on chosen fabric weave.',
-      recommendedRooms: 'Living rooms, master suites, dining areas, balconies, and conference rooms.',
+      materials: 'Fresh seasonal flowers, handcrafted brass urlis, organza drapes, and architectural framing.',
+      maintenance: 'On-site same-day setup ensuring maximum freshness and petal longevity throughout the rituals.',
+      recommendedRooms: 'Wedding stages, reception banquets, and main ceremony halls.',
     },
   },
   {
-    slug: 'zebra-blinds',
+    slug: 'floral-backdrops',
     number: '02',
-    title: 'ZEBRA BLINDS',
-    subtitle: 'Light, privacy and modern simplicity.',
+    title: 'FLORAL BACKDROPS',
+    subtitle: 'Intricately woven flower walls, jaali motifs, and photo backdrops.',
     description:
-      'Dual-layer alternating sheer and solid fabric vanes that glide past each other to provide continuous light control from soft glow to complete privacy.',
-    ctaText: 'EXPLORE ZEBRA BLINDS →',
-    category: 'Window Solutions',
-    filterGroup: 'WINDOWS',
+      'Transform ceremony focal points into memorable photo settings. Handcrafted backdrops featuring geometric floral patterns, traditional brass bells, suspended floral strings, and lush greenery accents tailored to your celebration colors.',
+    ctaText: 'EXPLORE BACKDROPS →',
+    category: 'Floral Backdrops',
+    filterGroup: 'BACKDROPS',
     whatsappMessage:
-      'Hello D&D Home Decor, I am interested in zebra blinds. Please share more details.',
-    heroImage: '/images/dd/blinds/blind-01.jpeg',
+      'Hello Siri Flower Decoration, I would like to inquire about floral backdrops for an upcoming celebration.',
+    heroImage: 'https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       {
-        url: '/images/dd/blinds/blind-24.jpeg',
-        caption: 'Flush window reveal installation with horizontal privacy vanes.',
+        url: 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Dense floral backdrop with rose clusters and cascading foliage.',
       },
       {
-        url: '/images/dd/blinds/blind-20.jpeg',
-        caption: 'Bedroom zebra blind providing refined daylight filtering.',
+        url: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Traditional yellow marigold and mogra jaali backdrop.',
       },
       {
-        url: '/images/dd/blinds/blind-16.jpeg',
-        caption: 'Contemporary dual-tone stripes complementing modern interiors.',
+        url: 'https://images.unsplash.com/photo-1509927083803-4bd519298ac4?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Layered petal motifs and floral crest accents.',
       },
     ],
     features: [
-      'Dual-layer alternating sheer and privacy vanes',
-      'Precise transition from filtered daylight to visual privacy',
-      'Sleek aluminum top-cassette concealing roll mechanism',
-      'Smooth ball-chain control or automated motorized operation',
+      'Dense fresh flower walls and ombré gradient color transitions',
+      'Traditional genda and mogra lattice (jaali) geometric motifs',
+      'Photo booth frames and personalized monogram floral surrounds',
+      'Easy integration with brass bells, diyas, and ceremonial hanging props',
     ],
     suitableSpaces: [
-      'Apartments & Flats',
-      'Bedrooms & Study Rooms',
-      'Modern Office Workspaces',
-      'Balconies & Utility Areas',
+      'Stage Backgrounds & Photo Booth Areas',
+      'Puja & Traditional Ritual Corners',
+      'Engagement & Haldi Photo Backdrops',
+      'Home Function Living Rooms & Lawns',
     ],
     stylingTips: [
-      'Align stripes horizontally to soften harsh afternoon glare.',
-      'Select neutral charcoal, beige or warm grey tones to pair with contemporary wall colors.',
-      'Ideal for windows above desks, kitchen slabs, or counters.',
+      'Choose high-contrast floral colors against guest attire to create vivid, vibrant photographs.',
+      'Incorporate traditional brass bells or hanging flower tassels for tactile movement.',
     ],
     materialsAndCare: {
-      materials: 'Anti-static woven polyester with thermal-sealed non-fray edges.',
-      maintenance: 'Occasional light feather dusting or gentle damp cloth wipe.',
-      recommendedRooms: 'Bedrooms, study rooms, home offices, and apartment living niches.',
+      materials: 'Genda Phool, White Mogra, Carnations, Chrysanthemums, and Satin Drapery.',
+      maintenance: 'Precision misting and temperature-controlled transport to prevent petal wilting.',
+      recommendedRooms: 'Ceremony backdrops, photo-op areas, and entrance lobbies.',
     },
   },
   {
-    slug: 'roller-blinds',
+    slug: 'wedding-entrance-decoration',
     number: '03',
-    title: 'ROLLER & ROMAN BLINDS',
-    subtitle: 'Streamlined minimalism for contemporary spaces.',
+    title: 'WEDDING ENTRANCE DECORATION',
+    subtitle: 'Enchanting floral welcome arches, lit pathways, and entrance installations.',
     description:
-      'Clean architectural window solutions offering high performance light blocking and solar heat reduction with an ultra-compact footprint.',
-    ctaText: 'EXPLORE ROLLER BLINDS →',
-    category: 'Window Solutions',
-    filterGroup: 'WINDOWS',
+      'First impressions define the celebration. We craft welcoming entrance passages adorned with fresh floral arches, brass lamp plinths, flower petal carpets, and welcoming focal points that greet your guests with warmth and beauty.',
+    ctaText: 'EXPLORE ENTRANCE DECOR →',
+    category: 'Entrance Décor',
+    filterGroup: 'ENTRANCE',
     whatsappMessage:
-      'Hello D&D Home Decor, I am interested in roller and roman blinds. Please share fabric options and details.',
-    heroImage: '/images/dd/blinds/blind-06.jpeg',
+      'Hello Siri Flower Decoration, I am planning event entrance decoration and would love to see options and pricing.',
+    heroImage: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       {
-        url: '/images/dd/blinds/blind-13.jpeg',
-        caption: 'Streamlined roller blind installation for study room windows.',
+        url: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Grand arched entryway with pastel roses and eucalyptus greenery.',
       },
       {
-        url: '/images/dd/blinds/blind-25.jpeg',
-        caption: 'Clean window finish preserving natural view and privacy.',
+        url: 'https://images.unsplash.com/photo-1509927083803-4bd519298ac4?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Intricate petal rangoli and illuminated pathway lanterns.',
       },
       {
-        url: '/images/dd/blinds/blind-22.jpeg',
-        caption: 'Compact profile fitting neatly inside window reveals.',
+        url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Traditional marigold torans and brass samai pillars.',
       },
     ],
     features: [
-      'Blackout and solar sunscreen fabric choices',
-      'Roman fold configurations creating soft horizontal fabric tiers',
-      'Heavy-duty aluminum roller tubes ensuring straight hang without bowing',
-      'Child-safe control mechanisms and motorized remote integration',
+      'Grand arched entryway structures in semicircular, Gothic, or square silhouettes',
+      'Pathway petal carpets and floating candle urlis along walking aisles',
+      'Thematic welcome board floral framing with personalized event calligraphy',
+      'Illuminated traditional standing brass lamps (samai / kuthuvilakku)',
     ],
     suitableSpaces: [
-      'Media Rooms & Home Theatres',
-      'Executive Office Cabins',
-      'Bedrooms requiring full morning blackout',
-      'Sunny south-facing windows',
+      'Venue Main Gate & Walkway Pathways',
+      'Banquet Entrance Foyers',
+      'Lawn & Garden Entry Portals',
+      'Home Gate & Courtyard Entrances',
     ],
     stylingTips: [
-      'Install inside the window recess for a tailored architectural look.',
-      'Layer a roller blackout behind sheer curtains for the ultimate balance of beauty and utility.',
+      'Line the pathway with low brass urlis filled with floating petals and warm tea lights for twilight arrivals.',
+      'Ensure clear, unobstructed passage width of at least 8 to 10 feet for effortless guest flow.',
     ],
     materialsAndCare: {
-      materials: 'UV-resistant coated fabrics, blackout fiberglass weaves, and textured poly blends.',
-      maintenance: 'Wipe clean with a microfiber cloth and mild soapy water.',
-      recommendedRooms: 'Bedrooms, media rooms, home offices, and meeting spaces.',
+      materials: 'Bougainvillea, Foliage, Red & Peach Roses, Traditional Brassware, Petal Rangoli.',
+      maintenance: 'Sturdy anchored steel frames with weather-resistant water vials for fresh stems.',
+      recommendedRooms: 'Venue gates, foyer entrances, and ceremonial arrival aisles.',
     },
   },
   {
-    slug: 'pvc-blinds',
+    slug: 'engagement-reception-decoration',
     number: '04',
-    title: 'PVC & VENETIAN BLINDS',
-    subtitle: 'Durable. Moisture-resistant. Easy maintenance.',
+    title: 'ENGAGEMENT & RECEPTION DECORATION',
+    subtitle: 'Romantic pastel backdrops, elegant stages, and evening ambient decor.',
     description:
-      'Engineered for areas subject to humidity, grease, and direct splash. Wipe-clean slats offer precise angle tilt to direct sunlight without sacrificing durability.',
-    ctaText: 'EXPLORE PVC BLINDS →',
-    category: 'Window Solutions',
-    filterGroup: 'WINDOWS',
+      'Celebrate your milestone moments with contemporary floral styling. Featuring soft pastel blooms, romantic rose clusters, fairy light canopies, and sophisticated stage seating arrangements designed for memorable evening functions.',
+    ctaText: 'EXPLORE RECEPTION DECOR →',
+    category: 'Reception & Engagement',
+    filterGroup: 'RECEPTION',
     whatsappMessage:
-      'Hello D&D Home Decor, I am interested in PVC and Venetian blinds for practical and moisture-prone areas.',
-    heroImage: '/images/products/pvc-blinds.png',
+      'Hello Siri Flower Decoration, I would like to discuss engagement and reception decoration in Secunderabad / Hyderabad.',
+    heroImage: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       {
-        url: '/images/dd/blinds/blind-15.jpeg',
-        caption: 'Moisture-resistant slat treatments tailored for kitchen window spans.',
+        url: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Ambient evening reception stage with warm fairy lighting canopy.',
       },
       {
-        url: '/images/dd/blinds/blind-18.jpeg',
-        caption: 'Compact profile fitting neatly within window frame reveals.',
+        url: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Elegant floral centerpiece and high-table candle styling.',
+      },
+      {
+        url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Romantic floral arch for couple ring exchange ceremony.',
       },
     ],
     features: [
-      '100% moisture and humidity resistant construction',
-      'Wipe-clean surface that resists dust, grease and splatters',
-      'Precision tilt wand for angle-specific light adjustment',
-      'UV-stabilized material that resists warping in sunny conditions',
+      'Modern pastel palettes (blush pink, champagne gold, ivory, sage green)',
+      'Customized couple seating sofas and throne focal points',
+      'Fairy light curtains, Edison bulb chandeliers, and warm accent wash illumination',
+      'Cocktail table and VIP dining table floral centerpieces',
     ],
     suitableSpaces: [
-      'Kitchens & Wash Areas',
-      'Bathrooms & Powder Rooms',
-      'Utility Balconies',
-      'Commercial Pantries',
+      'Hotel Ballrooms & Banquet Halls',
+      'Evening Open Lawn Receptions',
+      'Engagement Auditoriums',
+      'Private Clubhouses & Terraces',
     ],
     stylingTips: [
-      'Fit within the window reveal for a flush, uncluttered appearance.',
-      'Neutral tones balance functional durability with warmth.',
+      'Incorporate warm micro-LED string lights into greenery walls for an ethereal, starry evening glow.',
+      'Use tall trumpet vases on select tables to add height without obstructing cross-table conversation.',
     ],
     materialsAndCare: {
-      materials: 'High-density extruded PVC and aluminum alloys with UV-inhibitor coating.',
-      maintenance: 'Wipes clean in seconds with soapy water and sponge.',
-      recommendedRooms: 'Kitchens, utility spaces, bathrooms, and high-humidity areas.',
+      materials: 'Exotic Orchids, Asiatic Lilies, Hydrangeas, Eucalyptus, Fairy Light Curtains.',
+      maintenance: 'Precision evening lighting check and hydration replenishment before guests arrive.',
+      recommendedRooms: 'Reception stages, VIP dining areas, and couple photo lounges.',
     },
   },
   {
-    slug: 'custom-sofas',
+    slug: 'event-floral-arrangements',
     number: '05',
-    title: 'CUSTOMISED SOFAS',
-    subtitle: 'Designed around your space and comfort.',
+    title: 'EVENT FLORAL ARRANGEMENTS',
+    subtitle: 'Centerpieces, Haldi-Mehendi themes, car decoration, and custom floral accents.',
     description:
-      'Bring character and long-lasting comfort into your living spaces with custom-crafted sofas, sectionals, and bespoke seating created to fit your room dimensions and preferred upholstery.',
-    ctaText: 'EXPLORE SOFAS →',
-    category: 'Customised Furniture',
-    filterGroup: 'FURNITURE',
+      'From vibrant yellow-orange marigold themes for Haldi and Mehendi functions to delicate dining table centerpieces and ceremonial car decoration, we bring vibrant floral artistry to every event detail across Secunderabad.',
+    ctaText: 'EXPLORE FLORAL ARRANGEMENTS →',
+    category: 'Floral Arrangements',
+    filterGroup: 'ARRANGEMENTS',
     whatsappMessage:
-      'Hello D&D Home Decor, I am interested in customised sofas. I would like to know more about the available options.',
-    heroImage: '/images/dd/furniture/furniture-08.jpeg',
+      'Hello Siri Flower Decoration, I am interested in event floral arrangements and venue table decorations.',
+    heroImage: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=80',
     galleryImages: [
       {
-        url: '/images/dd/furniture/furniture-10.jpeg',
-        caption: 'Custom upholstered living room sofa with deep ergonomic seating.',
+        url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Fresh marigold garlands and traditional ceremonial setup.',
       },
       {
-        url: '/images/dd/furniture/furniture-14.jpeg',
-        caption: 'Family lounge sectional tailored to room proportions.',
+        url: 'https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Low profile floral centerpiece for family dining tables.',
       },
       {
-        url: '/images/dd/furniture/furniture-21.jpeg',
-        caption: 'Solid framework with tailored piping and cushion stitch details.',
+        url: 'https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1200&q=80',
+        caption: 'Vibrant yellow marigold and pink rose bouquet accents.',
       },
     ],
     features: [
-      'Made-to-measure dimensions: 3-seater, L-shaped sectional, or modular configs',
-      'Extensive selection of fabrics, textured bouclé, chenille, and leatherette swatches',
-      'High-resilience foam core for enduring ergonomic support',
-      'Solid hardwood internal framework built for long-term stability',
+      'Haldi & Mehendi yellow-orange theme setups with floral jewellery styling',
+      'Traditional wooden jhula (swing) decorated with marigolds and jasmine',
+      'Guest table floral centerpieces in brass, ceramic, or glass vessels',
+      'Bridal car fresh flower decoration with non-damaging soft suction mounts',
     ],
     suitableSpaces: [
-      'Living Rooms & Family Lounges',
-      'Apartment Drawing Rooms',
-      'Villa Living Niches',
-      'Office Reception & Lounge Areas',
+      'Pre-Wedding Haldi & Sangeet Venues',
+      'Home Terrace & Living Room Functions',
+      'Dining Tables & Buffet Counters',
+      'Wedding Procession & Bridal Vehicles',
     ],
     stylingTips: [
-      'Select sofa depth based on lifestyle—deeper seating for family lounging, firmer depth for formal sitting.',
-      'Pair neutral sofa upholstery with bold accent cushions in terracotta or warm gold.',
-      'Allow at least 18 inches of clearance between the coffee table and sofa edge.',
+      'Combine marigolds with dark green banana leaves or mango foliage for rich South Indian cultural warmth.',
+      'Use water bowls with floating petals and floating candles to elevate coffee tables and corner niches.',
     ],
     materialsAndCare: {
-      materials: 'Seasoned hardwood frame, high-density comfort foam, performance upholstery.',
-      maintenance: 'Regular vacuuming with upholstery nozzle; prompt spot cleaning for spills.',
-      recommendedRooms: 'Formal living rooms, family lounges, and media rooms.',
-    },
-  },
-  {
-    slug: 'accent-chairs',
-    number: '06',
-    title: 'CHAIRS & ACCENT SEATING',
-    subtitle: 'Distinctive character for every corner.',
-    description:
-      'Individually tailored accent chairs, lounge armchairs, and dining chairs. From tufted diamond-quilted statement chairs to understated reading armchairs.',
-    ctaText: 'EXPLORE CHAIRS →',
-    category: 'Customised Furniture',
-    filterGroup: 'FURNITURE',
-    whatsappMessage:
-      'Hello D&D Home Decor, I am interested in customised chairs and accent seating options.',
-    heroImage: '/images/dd/furniture/furniture-01.jpeg',
-    galleryImages: [
-      {
-        url: '/images/dd/furniture/furniture-02.jpeg',
-        caption: 'Bespoke accent armchair tailored for reading corners.',
-      },
-      {
-        url: '/images/dd/furniture/furniture-04.jpeg',
-        caption: 'Ergonomic upholstered chair with modern metallic accents.',
-      },
-      {
-        url: '/images/dd/furniture/furniture-31.jpeg',
-        caption: 'Custom upholstered headboard and bedroom paneling.',
-      },
-    ],
-    features: [
-      'Diamond tufting, fluted channel stitching, and custom piping options',
-      'Solid wood and powder-coated steel/brass leg finishes',
-      'Compact footprint that easily slots into reading corners, bedrooms, and foyers',
-      'Custom fabric and leatherette upholstery to match room palettes',
-    ],
-    suitableSpaces: [
-      'Bedroom Corners & Reading Nooks',
-      'Living Room Accent Positions',
-      'Dressing Tables & Foyers',
-      'Executive Cabins & Receptions',
-    ],
-    stylingTips: [
-      'Use a contrasting accent color to create a striking focal point.',
-      'Pair with a small brass or marble side table and ambient floor lamp.',
-    ],
-    materialsAndCare: {
-      materials: 'Solid frame, molded foam cushioning, durable upholstery fabrics.',
-      maintenance: 'Light fabric brush or vacuum; wipe metallic leg tips with dry microfiber.',
-      recommendedRooms: 'Bedrooms, living rooms, foyers, and study corners.',
-    },
-  },
-  {
-    slug: 'centre-tables',
-    number: '07',
-    title: 'CENTRE & SIDE TABLES',
-    subtitle: 'The functional centerpiece of the living space.',
-    description:
-      'Bespoke centre tables, nested coffee tables, and side tables crafted to anchor your seating arrangements and complete your living room ensemble.',
-    ctaText: 'EXPLORE TABLES →',
-    category: 'Customised Furniture',
-    filterGroup: 'FURNITURE',
-    whatsappMessage:
-      'Hello D&D Home Decor, I am interested in centre tables and living room furniture.',
-    heroImage: '/images/dd/furniture/furniture-08.jpeg',
-    galleryImages: [
-      {
-        url: '/images/dd/furniture/furniture-08.jpeg',
-        caption: 'Gold-finish geometric side table with marble top alongside lounge seating.',
-      },
-    ],
-    features: [
-      'Custom table heights proportioned to your sofa seat height',
-      'Choices of polished marble tops, solid timber, and brushed metallic frames',
-      'Nested designs for flexible entertaining and space optimization',
-      'Protective floor pads preventing scratching on marble and vitrified tiles',
-    ],
-    suitableSpaces: [
-      'Living Room Lounges',
-      'Formal Drawing Areas',
-      'Reception Areas',
-    ],
-    stylingTips: [
-      'Ensure centre table height is within 1 to 2 inches of your sofa seat cushion.',
-      'Style with a decorative tray, books, and artisanal ceramic accents.',
-    ],
-    materialsAndCare: {
-      materials: 'Natural stone/marble, seasoned timber, and electroplated steel.',
-      maintenance: 'Use coasters under hot beverages; wipe with a soft microfiber cloth.',
-      recommendedRooms: 'Living rooms, lounges, and office receptions.',
-    },
-  },
-  {
-    slug: 'mattresses',
-    number: '08',
-    title: 'BRANDED MATTRESSES',
-    subtitle: 'Official dealer for India’s leading sleep brands.',
-    description:
-      'Explore mattress options from reputed brands available through D&D Home Decor. We are authorized dealers in our area in Bengaluru for Kurlon, Duroflex, Sobha, Peps, Springfit, and Restolex.',
-    ctaText: 'ENQUIRE ON MATTRESSES →',
-    category: 'Bedding & Comfort',
-    filterGroup: 'MATTRESSES',
-    whatsappMessage:
-      'Hello D&D Home Decor, I am interested in branded mattresses and would like to know more about available options.',
-    heroImage: '/images/products/bedroom.png',
-    galleryImages: [
-      {
-        url: '/images/dd/furniture/furniture-31.jpeg',
-        caption: 'Custom upholstered headboard paired with premium mattress comfort.',
-      },
-      {
-        url: '/images/dd/furniture/furniture-29.jpeg',
-        caption: 'Bedroom interior styling with tailored headboard panel.',
-      },
-    ],
-    features: [
-      'Official authorized dealer in Bengaluru for top mattress brands',
-      'Brand portfolio: Kurlon, Duroflex, Sobha, Peps, Springfit, and Restolex',
-      'Available in King, Queen, Double, and custom bedroom dimensions',
-      'Technologies: Pocket spring, memory foam, natural latex, and orthopedic firm support',
-    ],
-    suitableSpaces: [
-      'Master Bedrooms & Guest Suites',
-      'Villas & Residential Apartments',
-      'Hospitality & Boutique Residences',
-    ],
-    stylingTips: [
-      'Pair with a custom upholstered headboard for an integrated bedroom aesthetic.',
-      'Use a breathable mattress protector to prolong mattress life and cleanliness.',
-    ],
-    materialsAndCare: {
-      materials: 'High-resilience foam, pocketed coils, natural latex, and quilted jacquard fabrics.',
-      maintenance: 'Rotate head-to-toe every 3 to 6 months for even wear.',
-      recommendedRooms: 'Master bedrooms, children rooms, and guest suites.',
-    },
-  },
-  {
-    slug: 'wallpapers',
-    number: '09',
-    title: 'WALLPAPERS & WALL TREATMENTS',
-    subtitle: 'Give your walls character and depth.',
-    description:
-      'Curated wallpaper collections featuring subtle textures, organic grasscloths, and contemporary geometric motifs designed to turn ordinary accent walls into focal points.',
-    ctaText: 'EXPLORE WALLPAPERS →',
-    category: 'Wall & Home Décor',
-    filterGroup: 'WALLS',
-    whatsappMessage:
-      'Hello D&D Home Decor, I am interested in wallpapers and wall decor options for my space.',
-    heroImage: '/images/products/wallpapers.jpg',
-    galleryImages: [
-      {
-        url: '/images/products/wallpapers.jpg',
-        caption: 'Textured wallpaper finish adding tactile warmth to interior walls.',
-      },
-    ],
-    features: [
-      'Textured vinyl, non-woven, and natural fiber designs',
-      'Wipeable and scratch-resistant surface finishes',
-      'Breathable backings suitable for Indian weather conditions',
-      'Professional alignment and pattern matching during application',
-    ],
-    suitableSpaces: [
-      'Living Room TV Unit Accent Walls',
-      'Master Bedroom Headboard Walls',
-      'Dining Room Niches & Foyers',
-      'Commercial Reception Backdrops',
-    ],
-    stylingTips: [
-      'Choose a single focal wall rather than all four walls to maintain room spaciousness.',
-      'Pair textured linen-look wallpaper with warm brass lighting sconces.',
-    ],
-    materialsAndCare: {
-      materials: 'Non-woven substrate with textured matte vinyl coatings.',
-      maintenance: 'Gently wipe with a dry cloth or lightly damp sponge.',
-      recommendedRooms: 'Living rooms, master bedrooms, foyers, and dining niches.',
-    },
-  },
-  {
-    slug: 'carpets-mats',
-    number: '10',
-    title: 'CARPETS, RUGS & MATS',
-    subtitle: 'Warmth, texture and definition underfoot.',
-    description:
-      'High-quality carpets, designer area rugs, runners, and durable mats. Woven textures that anchor furniture groupings and add acoustic comfort to living spaces.',
-    ctaText: 'EXPLORE CARPETS & MATS →',
-    category: 'Wall & Home Décor',
-    filterGroup: 'DECOR',
-    whatsappMessage:
-      'Hello D&D Home Decor, I am interested in carpets, rugs and high-quality mats.',
-    heroImage: '/images/dd/carpets-mats/carpet-mat-01.jpeg',
-    galleryImages: [
-      {
-        url: '/images/dd/carpets-mats/carpet-mat-03.jpeg',
-        caption: 'Textured geometric living room area rug sample.',
-      },
-      {
-        url: '/images/dd/carpets-mats/carpet-mat-05.jpeg',
-        caption: 'High-density woven runner suitable for corridors and bedside.',
-      },
-      {
-        url: '/images/dd/carpets-mats/carpet-mat-14.jpeg',
-        caption: 'Contemporary woven carpet collection with subtle luster.',
-      },
-    ],
-    features: [
-      'High-density woven fibers resistant to daily foot traffic',
-      'Organic marble, geometric, and abstract contemporary patterns',
-      'Available in standard room sizes and customized lengths',
-      'Anti-skid backing options for marble and tiled floors',
-    ],
-    suitableSpaces: [
-      'Living Room Seating Areas',
-      'Dining Tables & Foyers',
-      'Bedside Runners',
-      'Executive Office Lounges',
-    ],
-    stylingTips: [
-      'Front legs of all main seating pieces should ideally rest on the area rug.',
-      'Leave 12 to 18 inches of exposed floor around the carpet border for visual proportion.',
-    ],
-    materialsAndCare: {
-      materials: 'High-density synthetic fiber, poly-wool blends, and soft woven yarn.',
-      maintenance: 'Regular vacuuming; prompt blotting for accidental spills.',
-      recommendedRooms: 'Living areas, bedrooms, hallways, and dining spaces.',
-    },
-  },
-  {
-    slug: 'home-furnishings',
-    number: '11',
-    title: 'HOME FURNISHINGS & DÉCOR',
-    subtitle: 'Finishing touches that complete your interiors.',
-    description:
-      'Bed spreads, runners, sofa covers, ready-made curtains, bath towels, and decorative accents carefully selected to tie your home together.',
-    ctaText: 'EXPLORE HOME FURNISHINGS →',
-    category: 'Wall & Home Décor',
-    filterGroup: 'DECOR',
-    whatsappMessage:
-      'Hello D&D Home Decor, I am interested in bed spreads, runners, sofa covers and home furnishings.',
-    heroImage: '/images/dd/home-decor/home-decor-01.jpeg',
-    galleryImages: [
-      {
-        url: '/images/dd/furniture/furniture-08.jpeg',
-        caption: 'Fitted stretch sofa covers and accent cushions.',
-      },
-      {
-        url: '/images/dd/home-decor/home-decor-01.jpeg',
-        caption: 'Wood-framed botanical decorative panel.',
-      },
-    ],
-    features: [
-      'Protective and decorative sofa covers in stretch textured fabrics',
-      'Soft cotton bed spreads, designer runners, and cozy throws',
-      'High-absorbency luxury bath towels for everyday comfort',
-      'Ready-made curtains for rapid installation and immediate use',
-    ],
-    suitableSpaces: [
-      'Bedrooms & Living Spaces',
-      'Guest Suites',
-      'Apartments & Rental Homes',
-    ],
-    stylingTips: [
-      'Layer neutral bedding with a richly textured runner at the foot of the bed.',
-      'Use sofa covers to refresh living room furniture without replacing upholstery.',
-    ],
-    materialsAndCare: {
-      materials: 'Pure cotton, linen blends, microfibers, and stretch jacquards.',
-      maintenance: 'Machine wash friendly on gentle cycle with mild detergent.',
-      recommendedRooms: 'Bedrooms, living rooms, and bathrooms.',
+      materials: 'Yellow & Orange Marigold, Baby\'s Breath, Cut Foliage, Terracotta Accents, Brass Vessels.',
+      maintenance: 'Hydrated floral foam blocks and gentle misting to maintain freshness throughout long ceremonies.',
+      recommendedRooms: 'Haldi setups, dining tables, registration desks, and bridal vehicles.',
     },
   },
 ];
 
+// Helper to find a product by slug, including backwards compatibility aliases
 export function getProductBySlug(slug: string): ProductItem | undefined {
-  return productsData.find((p) => p.slug === slug);
+  const directMatch = productsData.find((p) => p.slug === slug);
+  if (directMatch) return directMatch;
+
+  // Backward compatibility aliases mapping old home decor slugs to new floral slugs
+  const aliasMap: Record<string, string> = {
+    curtains: 'wedding-stage-decoration',
+    'zebra-blinds': 'floral-backdrops',
+    'roller-blinds': 'floral-backdrops',
+    'pvc-blinds': 'wedding-entrance-decoration',
+    'custom-sofas': 'engagement-reception-decoration',
+    'accent-chairs': 'engagement-reception-decoration',
+    'centre-tables': 'event-floral-arrangements',
+    mattresses: 'wedding-stage-decoration',
+    wallpapers: 'floral-backdrops',
+    'carpets-mats': 'wedding-entrance-decoration',
+    'home-furnishings': 'event-floral-arrangements',
+  };
+
+  const aliasedSlug = aliasMap[slug];
+  if (aliasedSlug) {
+    return productsData.find((p) => p.slug === aliasedSlug);
+  }
+
+  return undefined;
 }
 
 export function getAdjacentProducts(currentSlug: string): {
@@ -556,8 +311,9 @@ export function getAdjacentProducts(currentSlug: string): {
   next: ProductItem;
 } {
   const currentIndex = productsData.findIndex((p) => p.slug === currentSlug);
-  const prevIndex = (currentIndex - 1 + productsData.length) % productsData.length;
-  const nextIndex = (currentIndex + 1) % productsData.length;
+  const safeIndex = currentIndex >= 0 ? currentIndex : 0;
+  const prevIndex = (safeIndex - 1 + productsData.length) % productsData.length;
+  const nextIndex = (safeIndex + 1) % productsData.length;
   return {
     prev: productsData[prevIndex],
     next: productsData[nextIndex],

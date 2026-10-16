@@ -36,7 +36,7 @@ export const ProductEditorialRow: React.FC<ProductEditorialRowProps> = ({
               src={product.heroImage}
               alt={`${product.title} - ${product.subtitle}`}
               loading={priority ? 'eager' : 'lazy'}
-              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+              className="w-full h-full object-cover object-center transition-opacity duration-300 group-hover:opacity-95"
             />
           </div>
 

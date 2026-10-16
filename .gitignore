@@ -40,3 +40,10 @@ dist-ssr
 
 .vercel
 .env*
+
+# Large media archives and scratch files
+*.zip
+*.xlsx
+*.csv
+d&d stocks/
+scratch/

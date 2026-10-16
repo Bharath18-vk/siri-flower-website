@@ -4,7 +4,7 @@ import { GalleryItem } from '../data/galleryData';
 import { useGallery } from '../hooks/useGallery';
 import { getWhatsAppUrl } from '../data/config';
 
-type FilterType = 'ALL' | 'CURTAINS' | 'BLINDS' | 'FURNITURE' | 'CARPETS' | 'DECOR';
+type FilterType = 'ALL' | 'STAGE' | 'BACKDROP' | 'ENTRANCE' | 'RECEPTION' | 'ARRANGEMENTS';
 
 export const GallerySection: React.FC = () => {
   const { items: galleryItems } = useGallery();
@@ -33,17 +33,26 @@ export const GallerySection: React.FC = () => {
   }, [selectedItem]);
 
   const filters: { label: string; value: FilterType }[] = [
-    { label: 'ALL WORK', value: 'ALL' },
-    { label: 'CURTAINS', value: 'CURTAINS' },
-    { label: 'BLINDS', value: 'BLINDS' },
-    { label: 'FURNITURE', value: 'FURNITURE' },
-    { label: 'CARPETS & MATS', value: 'CARPETS' },
-    { label: 'HOME DÉCOR', value: 'DECOR' },
+    { label: 'ALL DESIGNS', value: 'ALL' },
+    { label: 'WEDDING STAGES', value: 'STAGE' },
+    { label: 'FLORAL BACKDROPS', value: 'BACKDROP' },
+    { label: 'ENTRANCE ARCHES', value: 'ENTRANCE' },
+    { label: 'RECEPTIONS', value: 'RECEPTION' },
+    { label: 'FLORAL ACCENTS', value: 'ARRANGEMENTS' },
   ];
 
   const filteredItems = activeFilter === 'ALL'
     ? galleryItems
-    : galleryItems.filter((item) => item.category === activeFilter);
+    : galleryItems.filter((item) => {
+        if (item.category === activeFilter) return true;
+        // Fallback for legacy categories
+        if (activeFilter === 'STAGE' && item.category === 'CURTAINS') return true;
+        if (activeFilter === 'BACKDROP' && item.category === 'BLINDS') return true;
+        if (activeFilter === 'RECEPTION' && item.category === 'FURNITURE') return true;
+        if (activeFilter === 'ENTRANCE' && item.category === 'CARPETS') return true;
+        if (activeFilter === 'ARRANGEMENTS' && item.category === 'DECOR') return true;
+        return false;
+      });
 
   const displayedItems = filteredItems.slice(0, visibleCount);
 
@@ -54,23 +63,23 @@ export const GallerySection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between pb-10 border-b border-stone-200 gap-6">
           <div className="space-y-3 max-w-2xl">
             <span className="text-[11px] uppercase tracking-widest font-semibold text-warm-gold-dark block">
-              AUTHENTIC CLIENT WORK &amp; SHOWROOM
+              CURATED CELEBRATION PORTFOLIO
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-espresso font-normal leading-[1.1] tracking-tight">
-              SPACES TRANSFORMED
+              MOMENTS ADORNED WITH BLOOMS
             </h2>
             <p className="text-sm sm:text-base text-stone-600 font-light leading-relaxed">
-              Explore authentic photographs of customized curtains, precision window blinds, bespoke furniture, and luxury rugs installed across Bengaluru homes.
+              Explore curated inspiration photographs of handcrafted wedding stages, vibrant marigold backdrops, grand floral entrance arches, and romantic reception settings across Secunderabad &amp; Hyderabad.
             </p>
           </div>
 
           <a
-            href={getWhatsAppUrl('Hello D&D Home Decor, I saw your portfolio gallery and would like to discuss an installation for my home.')}
+            href={getWhatsAppUrl('Hello Siri Flower Decoration, I saw your portfolio gallery and would like to discuss decoration for an upcoming event.')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.15em] font-semibold text-espresso hover:text-warm-gold-dark transition-colors self-start md:self-end pb-1 group"
           >
-            <span>Ask About Similar Work</span>
+            <span>Ask About Similar Decor</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
@@ -112,7 +121,7 @@ export const GallerySection: React.FC = () => {
                   src={item.imageUrl}
                   alt={item.title}
                   loading="lazy"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-opacity duration-300 group-hover:opacity-95"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                   <span className="inline-flex items-center space-x-1 text-ivory text-xs font-medium tracking-wider">
@@ -194,7 +203,7 @@ export const GallerySection: React.FC = () => {
               </div>
 
               <a
-                href={getWhatsAppUrl(`Hello D&D Home Decor, I am inquiring about the ${selectedItem.title} shown in your project gallery.`)}
+                href={getWhatsAppUrl(`Hello Siri Flower Decoration, I am inquiring about the ${selectedItem.title} shown in your portfolio gallery.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-espresso hover:bg-stone-800 text-ivory text-xs uppercase tracking-[0.16em] font-medium rounded shadow-luxury shrink-0 transition-colors"

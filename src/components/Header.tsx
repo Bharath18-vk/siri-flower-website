@@ -117,7 +117,7 @@ export const Header: React.FC = () => {
                   : 'bg-stone-900 hover:bg-warm-gold hover:text-espresso text-ivory shadow-sm'
               }`}
             >
-              <MessageCircle className="w-3.5 h-3.5 text-green-400 group-hover:scale-110 transition-transform" />
+              <MessageCircle className="w-3.5 h-3.5 text-green-400 group-hover:text-green-500 transition-colors" />
               <span>WhatsApp Enquiry</span>
               <ArrowUpRight className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
             </a>

@@ -88,7 +88,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
         <div className="flex items-center justify-between text-[11px] text-stone-500 pt-2">
           <span>{businessConfig.locationLabel}</span>
-          <span className="text-stone-400 font-light">Where comfort meets elegance</span>
+          <span className="text-stone-400 font-light">Turning moments into memories</span>
         </div>
       </div>
     </div>

@@ -1,13 +1,26 @@
 /**
- * D&D Home Decor — Authentic Gallery Data
- * All media items sourced directly from verified client installations and showroom assets.
- * Excludes all external reference screenshots and third-party advertising.
+ * Siri Flower Decoration: Curated Gallery Data
+ * High-quality, realistic Indian wedding and event decoration inspiration photography.
+ * Representative inspiration imagery clearly curated for client visualization.
  */
+
+export type GalleryCategory =
+  | 'STAGE'
+  | 'BACKDROP'
+  | 'ENTRANCE'
+  | 'RECEPTION'
+  | 'ARRANGEMENTS'
+  // Legacy aliases for backward compatibility
+  | 'CURTAINS'
+  | 'BLINDS'
+  | 'FURNITURE'
+  | 'CARPETS'
+  | 'DECOR';
 
 export interface GalleryItem {
   id: string;
   title: string;
-  category: 'CURTAINS' | 'BLINDS' | 'FURNITURE' | 'CARPETS' | 'DECOR';
+  category: GalleryCategory;
   categoryLabel: string;
   imageUrl: string;
   caption: string;
@@ -15,238 +28,157 @@ export interface GalleryItem {
 }
 
 export const galleryItems: GalleryItem[] = [
-  // Curtains
+  // Wedding Stages
   {
-    id: 'gal-curtain-01',
-    title: 'Floor-to-Ceiling Sheers & Pleated Drapes',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-02.jpeg',
-    caption: 'Dual-track sheer and tailored drapes in a contemporary living room setting.',
+    id: 'gal-stage-01',
+    title: 'Traditional Floral Mandap with Canopied Blooms',
+    category: 'STAGE',
+    categoryLabel: 'Wedding Stage',
+    imageUrl: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Four-pillar ceremonial mandap adorned with fresh roses and jasmine.',
     featured: true,
   },
   {
-    id: 'gal-curtain-02',
-    title: 'Symmetrical Living Room Drapery',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-12.jpeg',
-    caption: 'Full-height sheer curtains with tailored pleats and matching tie-backs.',
+    id: 'gal-stage-02',
+    title: 'Royal South Indian Wedding Mandap',
+    category: 'STAGE',
+    categoryLabel: 'Wedding Stage',
+    imageUrl: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Classic marigold and fresh tuberose stage setup for traditional rituals.',
     featured: true,
   },
   {
-    id: 'gal-curtain-03',
-    title: 'Apartment Master Living Curtains',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-05.jpeg',
-    caption: 'Architectural recessed ceiling track with sheer illumination and side pleats.',
+    id: 'gal-stage-03',
+    title: 'Hanging Jasmine Garlands & Floral Chandeliers',
+    category: 'STAGE',
+    categoryLabel: 'Wedding Stage',
+    imageUrl: 'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Cascading mogra strings and warm spotlights creating ambient ceremony warmth.',
     featured: true,
   },
   {
-    id: 'gal-curtain-04',
-    title: 'Warm Wood & Sheer Composition',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-08.jpeg',
-    caption: 'Warm ambient lighting complemented by custom drapery and sheer drop.',
-    featured: false,
-  },
-  {
-    id: 'gal-curtain-05',
-    title: 'Bedroom Window Treatment',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-03.jpeg',
-    caption: 'Custom drop sheer panels fitted for bedroom window reveal and study niche.',
-    featured: false,
-  },
-  {
-    id: 'gal-curtain-06',
-    title: 'Soft Linen Sheer Framing',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-07.jpeg',
-    caption: 'Delicate light-filtering sheers tied back with classic drapery accents.',
-    featured: false,
-  },
-  {
-    id: 'gal-curtain-07',
-    title: 'Villa Window Treatment',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-10.jpeg',
-    caption: 'Tailored drapes designed to frame large window spans effortlessly.',
-    featured: false,
-  },
-  {
-    id: 'gal-curtain-08',
-    title: 'Modern Pleated Panels',
-    category: 'CURTAINS',
-    categoryLabel: 'Custom Curtains',
-    imageUrl: '/images/dd/curtains/curtain-11.jpeg',
-    caption: 'Precision pleated fabric panels offering clean vertical folds.',
+    id: 'gal-stage-04',
+    title: 'Grand Floral Stage with Crimson & Ivory Drapery',
+    category: 'STAGE',
+    categoryLabel: 'Wedding Stage',
+    imageUrl: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Symmetrical floral backdrop framed by rich burgundy drapes.',
     featured: false,
   },
 
-  // Blinds
+  // Floral Backdrops
   {
-    id: 'gal-blind-01',
-    title: 'Architectural Zebra Blind',
-    category: 'BLINDS',
-    categoryLabel: 'Window Blinds',
-    imageUrl: '/images/dd/blinds/blind-01.jpeg',
-    caption: 'Custom zebra blind installation fitted neatly within an accent brick reveal.',
+    id: 'gal-backdrop-01',
+    title: 'Lush Fresh Rose & Foliage Photo Wall',
+    category: 'BACKDROP',
+    categoryLabel: 'Floral Backdrops',
+    imageUrl: 'https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: High-density floral wall designed for vibrant wedding photography.',
     featured: true,
   },
   {
-    id: 'gal-blind-02',
-    title: 'Precision Light-Filter Zebra Blind',
-    category: 'BLINDS',
-    categoryLabel: 'Window Blinds',
-    imageUrl: '/images/dd/blinds/blind-24.jpeg',
-    caption: 'Dual-layer horizontal vanes providing seamless light and privacy adjustment.',
+    id: 'gal-backdrop-02',
+    title: 'Botanical Greenery Wall with Floral Crests',
+    category: 'BACKDROP',
+    categoryLabel: 'Floral Backdrops',
+    imageUrl: 'https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Textural eucalyptus and white carnation backdrop for reception photo sessions.',
     featured: true,
   },
   {
-    id: 'gal-blind-03',
-    title: 'Bedroom Window Zebra Blind',
-    category: 'BLINDS',
-    categoryLabel: 'Window Blinds',
-    imageUrl: '/images/dd/blinds/blind-20.jpeg',
-    caption: 'Compact cassette blind mounted flush for optimal bedroom privacy.',
+    id: 'gal-backdrop-03',
+    title: 'Traditional Festive Marigold Jaali Backdrop',
+    category: 'BACKDROP',
+    categoryLabel: 'Floral Backdrops',
+    imageUrl: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Intricate yellow and orange marigold lattice for Haldi and family ceremonies.',
     featured: false,
   },
   {
-    id: 'gal-blind-04',
-    title: 'Living Room Roller Solution',
-    category: 'BLINDS',
-    categoryLabel: 'Window Blinds',
-    imageUrl: '/images/dd/blinds/blind-06.jpeg',
-    caption: 'Minimalist window blind offering clean lines and whisper-quiet control.',
-    featured: false,
-  },
-  {
-    id: 'gal-blind-05',
-    title: 'Apartment Window Blinds',
-    category: 'BLINDS',
-    categoryLabel: 'Window Blinds',
-    imageUrl: '/images/dd/blinds/blind-16.jpeg',
-    caption: 'Contemporary horizontal vanes enhancing natural light diffusion.',
-    featured: false,
-  },
-  {
-    id: 'gal-blind-06',
-    title: 'Study & Balcony Window Blinds',
-    category: 'BLINDS',
-    categoryLabel: 'Window Blinds',
-    imageUrl: '/images/dd/blinds/blind-13.jpeg',
-    caption: 'Practical light control ideal for workspaces and balcony windows.',
+    id: 'gal-backdrop-04',
+    title: 'Pastel Floral Wall with Monogram Framing',
+    category: 'BACKDROP',
+    categoryLabel: 'Floral Backdrops',
+    imageUrl: 'https://images.unsplash.com/photo-1509927083803-4bd519298ac4?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Soft pink, peach, and cream bloom arrangements for engagement ceremonies.',
     featured: false,
   },
 
-  // Furniture
+  // Entrance & Pathways
   {
-    id: 'gal-furn-01',
-    title: 'Tufted Accent Chair',
-    category: 'FURNITURE',
-    categoryLabel: 'Customised Furniture',
-    imageUrl: '/images/dd/furniture/furniture-01.jpeg',
-    caption: 'Bespoke teal diamond-quilted armchair with modern black and brass legs.',
+    id: 'gal-entrance-01',
+    title: 'Monumental Floral Arched Welcome Gate',
+    category: 'ENTRANCE',
+    categoryLabel: 'Entrance Décor',
+    imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Full-span floral welcome archway adorned with roses and greenery.',
     featured: true,
   },
   {
-    id: 'gal-furn-02',
-    title: 'Waffle-Knit Sectional Sofa',
-    category: 'FURNITURE',
-    categoryLabel: 'Customised Furniture',
-    imageUrl: '/images/dd/furniture/furniture-08.jpeg',
-    caption: 'Tailored sectional seating with textured waffle weave and matching cushions.',
+    id: 'gal-entrance-02',
+    title: 'Lit Pathway with Petal Rangoli & Brass Samais',
+    category: 'ENTRANCE',
+    categoryLabel: 'Entrance Décor',
+    imageUrl: 'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Warm illuminated aisle with scattered fresh rose petals and standing oil lamps.',
     featured: true,
   },
   {
-    id: 'gal-furn-03',
-    title: 'Contemporary Fluted Headboard',
-    category: 'FURNITURE',
-    categoryLabel: 'Customised Furniture',
-    imageUrl: '/images/dd/furniture/furniture-31.jpeg',
-    caption: 'Custom upholstered bedroom headboard with architectural vertical fluting.',
-    featured: true,
-  },
-  {
-    id: 'gal-furn-04',
-    title: 'Bespoke Accent Armchair',
-    category: 'FURNITURE',
-    categoryLabel: 'Customised Furniture',
-    imageUrl: '/images/dd/furniture/furniture-02.jpeg',
-    caption: 'Custom ergonomic chair tailored for comfortable living and reading corners.',
-    featured: false,
-  },
-  {
-    id: 'gal-furn-05',
-    title: 'Living Room Sofa Arrangement',
-    category: 'FURNITURE',
-    categoryLabel: 'Customised Furniture',
-    imageUrl: '/images/dd/furniture/furniture-10.jpeg',
-    caption: 'Comfortable family lounge sofa crafted with high-resilience foam support.',
-    featured: false,
-  },
-  {
-    id: 'gal-furn-06',
-    title: 'Upholstered Bedroom Panel',
-    category: 'FURNITURE',
-    categoryLabel: 'Customised Furniture',
-    imageUrl: '/images/dd/furniture/furniture-29.jpeg',
-    caption: 'Wall-mounted upholstered headboard panel designed to anchor bedroom spaces.',
+    id: 'gal-entrance-03',
+    title: 'Traditional Marigold Torans & Hanging Bells',
+    category: 'ENTRANCE',
+    categoryLabel: 'Entrance Décor',
+    imageUrl: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Entrance gateway decorated with fresh marigold strings and temple bells.',
     featured: false,
   },
 
-  // Carpets & Mats
+  // Engagement & Reception
   {
-    id: 'gal-carpet-01',
-    title: 'Marbled Texture Luxury Rug',
-    category: 'CARPETS',
-    categoryLabel: 'Carpets & Mats',
-    imageUrl: '/images/dd/carpets-mats/carpet-mat-01.jpeg',
-    caption: 'High-density woven area rug featuring organic marbled veins.',
+    id: 'gal-reception-01',
+    title: 'Romantic Evening Reception Stage',
+    category: 'RECEPTION',
+    categoryLabel: 'Reception & Engagement',
+    imageUrl: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Sophisticated couple seating backed by floral arches and soft warm fairy lights.',
     featured: true,
   },
   {
-    id: 'gal-carpet-02',
-    title: 'Textured Geometric Living Rug',
-    category: 'CARPETS',
-    categoryLabel: 'Carpets & Mats',
-    imageUrl: '/images/dd/carpets-mats/carpet-mat-03.jpeg',
-    caption: 'Premium floor covering designed to define living room seating zones.',
+    id: 'gal-reception-02',
+    title: 'Fairy Light Canopy with Suspended Orchids',
+    category: 'RECEPTION',
+    categoryLabel: 'Reception & Engagement',
+    imageUrl: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Evening ballroom ceiling transformed with ambient glow and hanging florals.',
     featured: false,
   },
   {
-    id: 'gal-carpet-03',
-    title: 'Contemporary Runner & Mat Sample',
-    category: 'CARPETS',
-    categoryLabel: 'Carpets & Mats',
-    imageUrl: '/images/dd/carpets-mats/carpet-mat-05.jpeg',
-    caption: 'Durable, soft-underfoot weave suitable for hallways and bedside areas.',
-    featured: false,
-  },
-  {
-    id: 'gal-carpet-04',
-    title: 'Designer Carpet Weave',
-    category: 'CARPETS',
-    categoryLabel: 'Carpets & Mats',
-    imageUrl: '/images/dd/carpets-mats/carpet-mat-14.jpeg',
-    caption: 'Curated carpet collection featuring contemporary patterns and tones.',
+    id: 'gal-reception-03',
+    title: 'Elegant Banquet Table Floral Runner',
+    category: 'RECEPTION',
+    categoryLabel: 'Reception & Engagement',
+    imageUrl: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Lush low-profile floral runner with tapered candles for VIP banquet tables.',
     featured: false,
   },
 
-  // Home Décor
+  // Arrangements & Details
   {
-    id: 'gal-decor-01',
-    title: 'Framed Artificial Green Wall Panel',
-    category: 'DECOR',
-    categoryLabel: 'Home Décor',
-    imageUrl: '/images/dd/home-decor/home-decor-01.jpeg',
-    caption: 'Handcrafted timber-framed botanical accent panel for entryways and focal walls.',
+    id: 'gal-arr-01',
+    title: 'Festive Haldi Jhula (Swing) Floral Styling',
+    category: 'ARRANGEMENTS',
+    categoryLabel: 'Floral Arrangements',
+    imageUrl: 'https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Wooden swing wrapped with dense marigold garlands and baby\'s breath accents.',
     featured: true,
+  },
+  {
+    id: 'gal-arr-02',
+    title: 'Artisanal Brass Urli with Floating Petals',
+    category: 'ARRANGEMENTS',
+    categoryLabel: 'Floral Arrangements',
+    imageUrl: 'https://images.unsplash.com/photo-1508615039623-a25605d2b022?auto=format&fit=crop&w=1200&q=80',
+    caption: 'Representative inspiration: Traditional welcoming brass vessels with floating marigolds and tealights.',
+    featured: false,
   },
 ];

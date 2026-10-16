@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
               {businessConfig.tagline}
             </p>
             <p className="text-xs sm:text-sm text-stone-400 font-light leading-relaxed max-w-md">
-              Curtains, blinds, sofas, wallpapers and home décor solutions designed to transform everyday spaces.
+              Bespoke wedding stages, fresh floral backdrops, entrance arches, and event flower decoration crafted for unforgettable celebrations.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
           {/* Location & Quick Contact */}
           <div className="md:col-span-3 space-y-4">
             <span className="text-[11px] uppercase tracking-widest font-medium text-stone-400 block">
-              Showroom &amp; Enquiries
+              Location &amp; Inquiries
             </span>
             <div className="space-y-1 text-xs sm:text-sm text-stone-300 font-light">
               <p className="font-medium text-ivory">{businessConfig.name}</p>
@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
               >
                 {businessConfig.address}
               </a>
-              <p className="text-warm-gold-light pt-1">Call: {businessConfig.primaryPhone}</p>
+              <p className="text-warm-gold-light pt-1">Call / WhatsApp: {businessConfig.primaryPhone}</p>
               {businessConfig.secondaryPhone && (
                 <p className="text-stone-400">Alt: {businessConfig.secondaryPhone}</p>
               )}
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <p>© {new Date().getFullYear()} {businessConfig.name}. All rights reserved.</p>
           <p className="text-xs text-stone-400 text-center sm:text-right">
-            Bengaluru, Karnataka • Customized Curtains, Blinds, Furniture &amp; Mattresses
+            Bolarum, Secunderabad, Telangana • Wedding Stage, Floral Backdrops &amp; Event Decoration
           </p>
         </div>
       </div>

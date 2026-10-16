@@ -7,7 +7,7 @@ import {
   ExternalLink,
   Layers,
   Clock,
-  Sparkles,
+  Flower2,
   ArrowRight,
   FolderOpen,
   KeyRound,
@@ -302,55 +302,56 @@ export const AdminDashboardPage: React.FC = () => {
 
           <div className="p-6 rounded bg-ivory border border-stone-200 shadow-subtle flex flex-col justify-between space-y-3">
             <div className="flex items-center justify-between text-stone-500">
-              <span className="text-xs uppercase tracking-widest font-semibold">Curtains</span>
+              <span className="text-xs uppercase tracking-widest font-semibold">Stage Decoration</span>
               <div className="p-2 rounded-full bg-cream text-warm-gold-dark">
                 <Layers className="w-5 h-5" />
               </div>
             </div>
             <div className="space-y-1">
               <span className="font-serif text-4xl text-espresso font-normal">
-                {isLoading ? '...' : categoriesMap.Curtains || 0}
+                {isLoading ? '...' : categoriesMap['Stage Decoration'] || categoriesMap.Curtains || 0}
               </span>
               <span className="text-xs text-stone-400 block font-light">
-                Custom curtain installations
+                Mandaps &amp; ceremonial stages
               </span>
             </div>
           </div>
 
           <div className="p-6 rounded bg-ivory border border-stone-200 shadow-subtle flex flex-col justify-between space-y-3">
             <div className="flex items-center justify-between text-stone-500">
-              <span className="text-xs uppercase tracking-widest font-semibold">Blinds &amp; Windows</span>
+              <span className="text-xs uppercase tracking-widest font-semibold">Floral Backdrops</span>
               <div className="p-2 rounded-full bg-cream text-warm-gold-dark">
                 <Layers className="w-5 h-5" />
               </div>
             </div>
             <div className="space-y-1">
               <span className="font-serif text-4xl text-espresso font-normal">
-                {isLoading ? '...' : categoriesMap.Blinds || 0}
+                {isLoading ? '...' : categoriesMap['Floral Backdrops'] || categoriesMap.Blinds || 0}
               </span>
               <span className="text-xs text-stone-400 block font-light">
-                Zebra, roller &amp; roman blinds
+                Flower walls &amp; photo booths
               </span>
             </div>
           </div>
 
           <div className="p-6 rounded bg-ivory border border-stone-200 shadow-subtle flex flex-col justify-between space-y-3">
             <div className="flex items-center justify-between text-stone-500">
-              <span className="text-xs uppercase tracking-widest font-semibold">Furniture &amp; Décor</span>
+              <span className="text-xs uppercase tracking-widest font-semibold">Entrance &amp; Reception</span>
               <div className="p-2 rounded-full bg-cream text-warm-gold-dark">
-                <Sparkles className="w-5 h-5" />
+                <Flower2 className="w-5 h-5" />
               </div>
             </div>
             <div className="space-y-1">
               <span className="font-serif text-4xl text-espresso font-normal">
                 {isLoading
                   ? '...'
-                  : (categoriesMap.Furniture || 0) +
-                    (categoriesMap['Home Décor'] || 0) +
-                    (categoriesMap['Carpets & Mats'] || 0)}
+                  : (categoriesMap['Entrance Decoration'] || 0) +
+                    (categoriesMap['Reception & Engagement'] || 0) +
+                    (categoriesMap['Floral Arrangements'] || 0) +
+                    (categoriesMap.Furniture || 0)}
               </span>
               <span className="text-xs text-stone-400 block font-light">
-                Sofas, chairs, rugs &amp; accents
+                Welcome arches &amp; celebrations
               </span>
             </div>
           </div>

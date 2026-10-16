@@ -1,9 +1,6 @@
 /**
- * D&D Home Decor — Core Business Configuration
- *
- * NOTE FOR D&D CLIENT HANDOFF:
- * Update `whatsappNumber` below with the verified business phone number
- * in international format without '+' or spaces (e.g. '919876543210').
+ * Siri Flower Decoration: Core Business Configuration
+ * WhatsApp and Contact Configuration.
  * All WhatsApp triggers throughout the website automatically adapt.
  */
 
@@ -27,53 +24,70 @@ export interface BusinessConfig {
   googleMapsEmbedUrl: string;
   defaultWhatsAppMessage: string;
   contextualMessages: {
+    stage: string;
+    backdrops: string;
+    entrance: string;
+    reception: string;
+    arrangements: string;
+    general: string;
+    // Backward compatibility aliases
     curtains: string;
     blinds: string;
     furniture: string;
     mattresses: string;
     wallpapers: string;
     carpets: string;
-    general: string;
   };
 }
 
 export const businessConfig: BusinessConfig = {
-  name: 'D&D HOME DECOR',
-  tagline: 'TRANSFORM YOUR SPACE.',
-  subtitle: 'Home Decor & Interior Solutions',
-  categoryLabel: 'CUSTOMIZED CURTAINS • WINDOW BLINDS • FURNITURE • MATTRESSES',
-  city: 'Bengaluru',
-  state: 'Karnataka',
-  pincode: '560091',
+  name: 'Siri Flower Decoration',
+  tagline: 'Turning Your Special Moments Into Beautiful Memories.',
+  subtitle: 'Wedding & Event Floral Decoration',
+  categoryLabel: 'WEDDING STAGE • FLORAL BACKDROPS • ENTRANCE DECOR • RECEPTION CELEBRATIONS',
+  city: 'Secunderabad',
+  state: 'Telangana',
+  pincode: '500010',
   address:
-    '#1613, Andrahalli Main Rd, Venkateshwara Layout, Syndicate Bank Employees Housing Society Layout, Bengaluru, Karnataka 560091',
-  locationLabel: 'Andrahalli Main Rd, Venkateshwara Layout, Bengaluru',
-  areaContext: 'Bengaluru, Karnataka',
-  plusCode: 'XFVQ+HFP Bengaluru',
-  primaryPhone: '+91 96206 19613',
-  whatsappNumber: '919620619613',
-  instagramUrl: 'https://instagram.com/ddhomedecor',
+    'near Ratna Colony, Ratna Colony, Bolarum, Secunderabad, Telangana 500010, India',
+  locationLabel: 'near Ratna Colony, Bolarum, Secunderabad',
+  areaContext: 'Bolarum, Secunderabad, Telangana',
+  plusCode: 'Ratna Colony, Bolarum, Secunderabad',
+  primaryPhone: '+91 99660 42727',
+  whatsappNumber: '919966042727',
+  instagramUrl: 'https://instagram.com/siriflowerdecoration',
   googleMapsUrl:
-    'https://www.google.com/maps/search/?api=1&query=XFVQ%2BHFP%2C+Andrahalli+Main+Rd%2C+Venkateshwara+Layout%2C+Syndicate+Bank+Employees+Housing+Society+Layout%2C+Bengaluru%2C+Karnataka+560091',
+    'https://www.google.com/maps/search/?api=1&query=Siri+Flower+Decoration+near+Ratna+Colony+Bolarum+Secunderabad+Telangana+500010',
   googleMapsEmbedUrl:
-    'https://maps.google.com/maps?q=XFVQ%2BHFP%2C+Andrahalli+Main+Rd%2C+Venkateshwara+Layout%2C+Syndicate+Bank+Employees+Housing+Society+Layout%2C+Bengaluru%2C+Karnataka+560091&t=&z=16&ie=UTF8&iwloc=&output=embed',
+    'https://maps.google.com/maps?q=near+Ratna+Colony,+Bolarum,+Secunderabad,+Telangana+500010&t=&z=15&ie=UTF8&iwloc=&output=embed',
   defaultWhatsAppMessage:
-    'Hello D&D Home Decor, I came across your website and would like to discuss a home decor project.',
+    'Hello Siri Flower Decoration, I came across your website and would like to discuss floral decoration for an upcoming event.',
   contextualMessages: {
-    curtains:
-      'Hello D&D Home Decor, I am interested in customised curtains. I would like to know more about the available options.',
-    blinds:
-      'Hello D&D Home Decor, I am interested in window blinds. Please share more details.',
-    furniture:
-      'Hello D&D Home Decor, I am interested in customised furniture. I would like to know more about the available options.',
-    mattresses:
-      'Hello D&D Home Decor, I am interested in branded mattresses and would like to know more about available options.',
-    wallpapers:
-      'Hello D&D Home Decor, I am interested in wallpapers and wall decor options for my space.',
-    carpets:
-      'Hello D&D Home Decor, I am interested in carpets, rugs and high-quality mats.',
+    stage:
+      'Hello Siri Flower Decoration, I am interested in wedding stage decoration. Could you please share available design concepts and details?',
+    backdrops:
+      'Hello Siri Flower Decoration, I would like to inquire about floral backdrops for an upcoming celebration.',
+    entrance:
+      'Hello Siri Flower Decoration, I am planning event entrance decoration and would love to see options and pricing.',
+    reception:
+      'Hello Siri Flower Decoration, I would like to discuss engagement and reception decoration in Secunderabad / Hyderabad.',
+    arrangements:
+      'Hello Siri Flower Decoration, I am interested in event floral arrangements and venue table decorations.',
     general:
-      'Hello D&D Home Decor, I would like to enquire about your home decor solutions and visit your showroom.',
+      'Hello Siri Flower Decoration, I would like to enquire about your flower decoration services for an event.',
+    // Backward compatibility aliases
+    curtains:
+      'Hello Siri Flower Decoration, I am interested in wedding stage decoration and floral drapery.',
+    blinds:
+      'Hello Siri Flower Decoration, I would like to inquire about floral backdrops.',
+    furniture:
+      'Hello Siri Flower Decoration, I am interested in wedding mandap and stage seating arrangements.',
+    mattresses:
+      'Hello Siri Flower Decoration, I am interested in event floral styling.',
+    wallpapers:
+      'Hello Siri Flower Decoration, I am interested in decorative floral backdrops.',
+    carpets:
+      'Hello Siri Flower Decoration, I am interested in flower pathways and entrance petals.',
   },
 };
 
@@ -100,7 +114,7 @@ export interface NavItem {
 
 export const navigationLinks: NavItem[] = [
   { label: 'HOME', href: '/' },
-  { label: 'PRODUCTS', href: '/products' },
+  { label: 'SERVICES', href: '/products' },
   { label: 'GALLERY', href: '/gallery' },
   { label: 'ABOUT', href: '/about' },
   { label: 'CONTACT', href: '/contact' },

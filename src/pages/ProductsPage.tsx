@@ -5,23 +5,22 @@ import { productsData, ProductItem } from '../data/products';
 import { getWhatsAppUrl } from '../data/config';
 import { ContactBanner } from '../components/ContactBanner';
 
-type FilterGroup = 'ALL' | 'WINDOWS' | 'FURNITURE' | 'MATTRESSES' | 'WALLS' | 'DECOR';
+type FilterGroup = 'ALL' | 'STAGES' | 'BACKDROPS' | 'ENTRANCE' | 'RECEPTION' | 'ARRANGEMENTS';
 
 export const ProductsPage: React.FC = () => {
   const [activeGroup, setActiveGroup] = useState<FilterGroup>('ALL');
 
   const filterTabs: { label: string; value: FilterGroup }[] = [
-    { label: 'ALL PRODUCTS', value: 'ALL' },
-    { label: 'WINDOW SOLUTIONS', value: 'WINDOWS' },
-    { label: 'FURNITURE', value: 'FURNITURE' },
-    { label: 'BRANDED MATTRESSES', value: 'MATTRESSES' },
-    { label: 'WALL & HOME DÉCOR', value: 'DECOR' },
+    { label: 'ALL SERVICES', value: 'ALL' },
+    { label: 'WEDDING STAGES', value: 'STAGES' },
+    { label: 'FLORAL BACKDROPS', value: 'BACKDROPS' },
+    { label: 'ENTRANCE ARCHES', value: 'ENTRANCE' },
+    { label: 'RECEPTION & ENGAGEMENT', value: 'RECEPTION' },
+    { label: 'FLORAL ARRANGEMENTS', value: 'ARRANGEMENTS' },
   ];
 
   const filteredProducts = activeGroup === 'ALL'
     ? productsData
-    : activeGroup === 'DECOR'
-    ? productsData.filter((p) => p.filterGroup === 'DECOR' || p.filterGroup === 'WALLS')
     : productsData.filter((p) => p.filterGroup === activeGroup);
 
   return (
@@ -30,13 +29,13 @@ export const ProductsPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 border-b border-stone-200">
         <div className="max-w-3xl space-y-4">
           <span className="text-[11px] uppercase tracking-widest font-semibold text-warm-gold-dark block">
-            D&amp;D HOME DECOR CATALOGUE
+            SIRI FLOWER DECORATION • SERVICES &amp; OFFERINGS
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-espresso font-normal leading-[1.1] tracking-tight">
-            EXPLORE OUR<br />COLLECTIONS.
+            EXPLORE OUR<br />FLORAL SERVICES.
           </h1>
           <p className="text-base sm:text-lg text-stone-600 font-light leading-relaxed pt-2">
-            Customized curtains, precision window blinds, bespoke furniture, branded mattresses, and curated home furnishings designed for beautiful interiors across Bengaluru.
+            Wedding stage decoration, fresh floral backdrops, grand welcome arches, reception stages, and celebration floral styling across Bolarum, Secunderabad, and Hyderabad.
           </p>
         </div>
 
@@ -82,7 +81,7 @@ export const ProductsPage: React.FC = () => {
                     src={product.heroImage}
                     alt={product.title}
                     loading="lazy"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-opacity duration-300 group-hover:opacity-95"
                   />
                   <div className="absolute top-3 left-3">
                     <span className="px-2.5 py-1 text-[9.5px] uppercase tracking-widest font-medium bg-ivory/95 backdrop-blur-sm text-espresso rounded">
@@ -94,54 +93,46 @@ export const ProductsPage: React.FC = () => {
                 {/* Content */}
                 <div className="p-6 sm:p-7 space-y-3">
                   <div className="flex items-baseline justify-between text-xs font-mono text-warm-gold-dark">
-                    <span>COLLECTION {product.number}</span>
+                    <span>SERVICE {product.number}</span>
                   </div>
 
                   <h3 className="font-serif text-2xl text-espresso font-normal group-hover:text-warm-gold-dark transition-colors">
-                    <Link to={`/products/${product.slug}`}>
-                      {product.title}
-                    </Link>
+                    {product.title}
                   </h3>
 
-                  <p className="font-serif italic text-sm text-stone-500">
-                    {product.subtitle}
-                  </p>
-
-                  <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-stone-600 font-light leading-relaxed">
                     {product.description}
                   </p>
 
-                  {/* Suitable Spaces Badges */}
-                  {product.suitableSpaces && (
-                    <div className="pt-2 flex flex-wrap gap-1.5">
-                      {product.suitableSpaces.slice(0, 3).map((sp) => (
-                        <span key={sp} className="px-2 py-0.5 rounded text-[10px] bg-cream text-stone-600 font-light">
-                          {sp}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="pt-3 border-t border-stone-100 space-y-1.5">
+                    {product.features.slice(0, 2).map((feat, i) => (
+                      <div key={i} className="flex items-center space-x-2 text-xs text-stone-500 font-light">
+                        <span className="w-1 h-1 rounded-full bg-warm-gold" />
+                        <span>{feat}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* Bottom CTAs */}
-              <div className="px-6 pb-6 pt-2 border-t border-stone-100 flex items-center justify-between gap-3">
+              {/* Actions Footer */}
+              <div className="p-6 pt-0 flex items-center justify-between border-t border-stone-100 mt-2">
                 <Link
                   to={`/products/${product.slug}`}
-                  className="inline-flex items-center space-x-1 text-xs uppercase tracking-[0.14em] font-semibold text-espresso hover:text-warm-gold-dark transition-colors group/link"
+                  className="inline-flex items-center space-x-1.5 text-xs uppercase tracking-[0.15em] font-semibold text-espresso hover:text-warm-gold-dark transition-colors"
                 >
-                  <span>Explore Options</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+                  <span>View Details</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
 
                 <a
                   href={getWhatsAppUrl(product.whatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Enquire about ${product.title} on WhatsApp`}
-                  className="p-2.5 rounded bg-cream hover:bg-warm-gold hover:text-ivory text-espresso transition-colors shadow-sm"
+                  className="inline-flex items-center space-x-1.5 text-xs text-green-700 hover:text-green-800 font-medium"
                 >
-                  <MessageCircle className="w-4 h-4 text-green-600 group-hover:text-ivory" />
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>Enquire</span>
                 </a>
               </div>
             </div>
@@ -149,7 +140,7 @@ export const ProductsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Conversion Banner */}
+      {/* Contact Banner */}
       <ContactBanner />
     </div>
   );

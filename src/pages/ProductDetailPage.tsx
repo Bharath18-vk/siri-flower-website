@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { MessageCircle, ArrowLeft, ArrowRight, Check, Sparkles } from 'lucide-react';
+import { MessageCircle, ArrowLeft, ArrowRight, Check, Leaf } from 'lucide-react';
 import { getProductBySlug, getAdjacentProducts } from '../data/products';
 import { getWhatsAppUrl } from '../data/config';
 import { ContactBanner } from '../components/ContactBanner';
@@ -26,35 +26,30 @@ export const ProductDetailPage: React.FC = () => {
       const isMatch =
         label.includes(cat) ||
         cat.includes(label) ||
-        (cat.includes('curtain') && item.category === 'CURTAINS') ||
-        (cat.includes('blind') && item.category === 'BLINDS') ||
-        (cat.includes('furniture') && item.category === 'FURNITURE') ||
-        (cat.includes('sofa') && item.category === 'FURNITURE') ||
-        (cat.includes('chair') && item.category === 'FURNITURE') ||
-        (cat.includes('carpet') && item.category === 'CARPETS') ||
-        (cat.includes('mat') && item.category === 'CARPETS') ||
-        (cat.includes('mattress') && label.includes('mattress')) ||
-        (cat.includes('wallpaper') && label.includes('wallpaper')) ||
-        (cat.includes('decor') && item.category === 'DECOR');
+        (cat.includes('stage') && item.category === 'STAGE') ||
+        (cat.includes('backdrop') && item.category === 'BACKDROP') ||
+        (cat.includes('entrance') && item.category === 'ENTRANCE') ||
+        (cat.includes('reception') && item.category === 'RECEPTION') ||
+        (cat.includes('arrangement') && item.category === 'ARRANGEMENTS');
       return isMatch && !(product.galleryImages || []).some((p) => p.url === item.imageUrl);
     })
     .map((item) => ({
       url: item.imageUrl,
-      caption: item.caption || item.title || `${product.title} installation`,
+      caption: item.caption || item.title || `${product.title} design`,
     }));
 
   const combinedGalleryImages = [...dynamicPhotos, ...(product.galleryImages || [])];
 
   return (
     <div className="min-h-screen pt-28 sm:pt-36 bg-ivory">
-      {/* Back to Products Breadcrumb */}
+      {/* Back to Services Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
         <Link
           to="/products"
           className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.15em] text-stone-500 hover:text-espresso transition-colors group"
         >
           <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" />
-          <span>Back to All Collections</span>
+          <span>Back to All Services</span>
         </Link>
       </div>
 
@@ -82,7 +77,7 @@ export const ProductDetailPage: React.FC = () => {
           <div className="w-full min-w-0 lg:col-span-5 space-y-6">
             <div className="flex items-center space-x-3">
               <span className="font-mono text-xs font-semibold text-warm-gold-dark tracking-widest">
-                COLLECTION {product.number}
+                SERVICE {product.number}
               </span>
               <span className="w-6 h-[1px] bg-stone-300" />
               <span className="text-[11px] uppercase tracking-widest font-medium text-stone-500">
@@ -124,14 +119,14 @@ export const ProductDetailPage: React.FC = () => {
                 href={getWhatsAppUrl(product.whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-7 py-4 bg-espresso hover:bg-stone-800 text-ivory rounded font-medium text-xs uppercase tracking-[0.16em] shadow-luxury transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-7 py-4 bg-espresso hover:bg-stone-800 text-ivory rounded font-semibold text-xs uppercase tracking-[0.16em] shadow-luxury transition-all"
               >
                 <MessageCircle className="w-4 h-4 text-green-400" />
                 <span>Enquire on WhatsApp</span>
               </a>
 
-              <p className="text-[11px] text-stone-400 font-light">
-                Direct consultation for sizing, fabrics, patterns, site visits &amp; options.
+              <p className="text-[11px] text-stone-500 font-light">
+                Direct consultation for event dates, floral varieties, themes &amp; venue setup in Secunderabad.
               </p>
             </div>
           </div>
@@ -163,9 +158,9 @@ export const ProductDetailPage: React.FC = () => {
             {/* Materials & Maintenance */}
             <div className="bg-ivory p-7 rounded border border-stone-200 space-y-4">
               <div className="flex items-center space-x-2 text-warm-gold-dark">
-                <Sparkles className="w-4 h-4" />
+                <Leaf className="w-4 h-4" />
                 <span className="text-xs uppercase tracking-widest font-semibold text-espresso">
-                  Materials &amp; Care
+                  Floral Ingredients &amp; Care
                 </span>
               </div>
               <div className="space-y-3 text-xs sm:text-sm text-stone-600 font-light">
@@ -174,11 +169,11 @@ export const ProductDetailPage: React.FC = () => {
                   <p>{product.materialsAndCare.materials}</p>
                 </div>
                 <div>
-                  <strong className="font-medium text-espresso block">Maintenance:</strong>
+                  <strong className="font-medium text-espresso block">Freshness Care:</strong>
                   <p>{product.materialsAndCare.maintenance}</p>
                 </div>
                 <div>
-                  <strong className="font-medium text-espresso block">Recommended Spaces:</strong>
+                  <strong className="font-medium text-espresso block">Recommended Venues:</strong>
                   <p>{product.materialsAndCare.recommendedRooms}</p>
                 </div>
               </div>
@@ -189,7 +184,7 @@ export const ProductDetailPage: React.FC = () => {
               <div className="flex items-center space-x-2 text-warm-gold-dark">
                 <span className="w-2 h-2 rounded-full bg-warm-gold" />
                 <span className="text-xs uppercase tracking-widest font-semibold text-espresso">
-                  Styling &amp; Space Planning
+                  Event Styling &amp; Advice
                 </span>
               </div>
               <ul className="space-y-2.5">
@@ -211,13 +206,13 @@ export const ProductDetailPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="max-w-2xl space-y-2">
               <span className="text-[11px] uppercase tracking-widest font-semibold text-stone-400 block">
-                AUTHENTIC PHOTOGRAPHY
+                REPRESENTATIVE INSPIRATION
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-espresso font-normal">
-                INSTALLATIONS &amp; DETAILS
+                STAGE &amp; FLORAL DESIGNS
               </h2>
               <p className="text-xs sm:text-sm text-stone-500 font-light">
-                Photographs illustrating fabric draping, textures, and bespoke room finishes.
+                Representative inspiration photographs illustrating floral setups, bloom combinations, and celebratory arrangements.
               </p>
             </div>
 
@@ -232,7 +227,7 @@ export const ProductDetailPage: React.FC = () => {
                       src={img.url}
                       alt={img.caption}
                       loading="lazy"
-                      className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-opacity duration-300 group-hover:opacity-90"
                     />
                   </div>
                   <div className="p-4 bg-cream/40 border-t border-stone-200 flex-1">
@@ -257,7 +252,7 @@ export const ProductDetailPage: React.FC = () => {
             <ArrowLeft className="w-4 h-4 text-stone-400 group-hover:-translate-x-1 transition-transform shrink-0" />
             <div className="min-w-0">
               <span className="text-[10px] font-mono text-stone-400 block uppercase">
-                Previous
+                Previous Service
               </span>
               <span className="font-serif text-sm sm:text-lg text-espresso group-hover:text-warm-gold-dark transition-colors truncate block">
                 {prev.title}
@@ -271,7 +266,7 @@ export const ProductDetailPage: React.FC = () => {
           >
             <div className="min-w-0">
               <span className="text-[10px] font-mono text-stone-400 block uppercase">
-                Next
+                Next Service
               </span>
               <span className="font-serif text-sm sm:text-lg text-espresso group-hover:text-warm-gold-dark transition-colors truncate block">
                 {next.title}

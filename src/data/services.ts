@@ -1,6 +1,6 @@
-﻿/**
- * D&D Home Decor — Services Data
- * 5 curated services representing core home decor & residential interior spaces.
+/**
+ * Siri Flower Decoration: Curated Service Categories
+ * Proposed demo categories for floral and event decoration in Bolarum, Secunderabad.
  */
 
 export interface ServiceItem {
@@ -17,93 +17,93 @@ export interface ServiceItem {
 
 export const servicesData: ServiceItem[] = [
   {
-    id: 'residential-interiors',
+    id: 'wedding-stage-decoration',
     number: '01',
-    title: 'RESIDENTIAL INTERIORS',
+    title: 'WEDDING STAGE DECORATION',
     shortDescription:
-      'Thoughtful interior planning and styling for contemporary homes.',
+      'Grand floral mandaps, floral arches, and thematic wedding stages.',
     longDescription:
-      'We bring cohesive aesthetic direction, spatial harmony, and material richness to complete homes. From spatial layouts to custom lighting and soft furnishings, every room is treated as an essential part of an interconnected story.',
+      'We design captivating wedding stages customized to your venue, theme, and family traditions. From cascading fresh jasmine and rose garlands to modern architectural floral structures with warm ambient illumination, every setting is designed to honor your special day.',
     image:
-      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80',
     highlights: [
-      'Comprehensive space planning & furniture layouts',
-      'Harmonious color palettes & material moodboards',
-      'Custom woodwork & storage coordination',
-      'Art, mirror & lighting curation',
+      'Traditional and contemporary mandap setups',
+      'Bespoke floral chandeliers and hanging canopies',
+      'Orchestrated warm lighting and stage drapery',
+      'Fresh marigold, rose, and tuberose arrangements',
     ],
-    materialFocus: 'Natural Teakwood, Honed Stone, Textured Linen',
+    materialFocus: 'Fresh Dutch Roses, Marigold, Jasmine, Brass Urlis & Warm Amber Light',
   },
   {
-    id: 'living-spaces',
+    id: 'floral-backdrops',
     number: '02',
-    title: 'LIVING SPACES',
+    title: 'FLORAL BACKDROPS',
     shortDescription:
-      'Comfortable, character-filled living environments designed around everyday life.',
+      'Intricately woven flower walls and photogenic celebration backdrops.',
     longDescription:
-      'The living room is where family and friends gather. We craft layouts with comfortable conversational zones, tactile area rugs, sculptural coffee tables, and layered lighting that effortlessly adapts from daytime activity to relaxed evenings.',
+      'Transform ceremony focal points into memorable photo settings. Handcrafted backdrops featuring geometric floral patterns, traditional brass bells, suspended floral strings, and lush greenery accents tailored to your event colors.',
     image:
-      'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?auto=format&fit=crop&w=1200&q=80',
     highlights: [
-      'Ergonomic seating arrangements & custom sofas',
-      'Statement coffee table & accent plinth styling',
-      'Acoustic wall paneling & media unit design',
-      'Ambient & mood lighting schemes',
+      'Dense fresh flower walls and ombré gradients',
+      'Traditional genda and mogra lattice (jaali) motifs',
+      'Custom backdrop framing for photo opportunities',
+      'Fabric drapery integration with floral crests',
     ],
-    materialFocus: 'Bouclé, Brushed Brass, Oak Veneer, Travertine',
+    materialFocus: 'Genda Phool, White Mogra, Carnations, Organza Drapery',
   },
   {
-    id: 'bedrooms',
+    id: 'wedding-entrance-decoration',
     number: '03',
-    title: 'BEDROOMS',
+    title: 'WEDDING ENTRANCE DECORATION',
     shortDescription:
-      'Calm, personal spaces with considered materials, lighting and details.',
+      'Enchanting floral welcome arches, lit pathways, and entrance installations.',
     longDescription:
-      'Private sanctuaries designed for deep rest and tranquil mornings. We prioritize breathable natural textiles, acoustic dampening drapery, bespoke upholstered headboards, and glare-free lighting to cultivate an atmosphere of absolute calm.',
+      'First impressions define the celebration. We craft welcoming entrance passages adorned with fresh floral arches, brass lamp plinths, flower petal carpets, and dramatic welcoming focal points that welcome your guests with warmth and beauty.',
     image:
-      'https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80',
     highlights: [
-      'Bespoke headboard & bed frame styling',
-      'Layered natural bedding & blackout linen drapery',
-      'Integrated wardrobe concepts & dressing areas',
-      'Independent bedside lighting circuits',
+      'Grand arched entryway floral arches',
+      'Pathway petal carpets and floating candle urlis',
+      'Thematic welcome board floral framing',
+      'Illuminated traditional standing brass lamps',
     ],
-    materialFocus: 'Woven Cane, Washed Linen, Warm Ash, Soft Terracotta',
+    materialFocus: 'Bougainvillea, Foliage, Red & Peach Roses, Traditional Brassware',
   },
   {
-    id: 'kitchens',
+    id: 'engagement-reception-decoration',
     number: '04',
-    title: 'KITCHENS',
+    title: 'ENGAGEMENT & RECEPTION DECORATION',
     shortDescription:
-      'Functional kitchens designed with a balance of practicality and visual simplicity.',
+      'Romantic pastel backdrops, elegant stages, and evening ambient decor.',
     longDescription:
-      'The culinary center of the home must be as durable as it is beautiful. We design clean, streamlined kitchens with seamless cabinet fronts, scratch-resistant countertops, intuitive pantry storage, and dedicated task lighting.',
+      'Celebrate your milestone moments with contemporary floral styling. Featuring soft pastel blooms, romantic rose clusters, fairy light canopies, and sophisticated stage seating arrangements designed for memorable evening functions.',
     image:
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80',
     highlights: [
-      'Optimized culinary workflows & ergonomic zoning',
-      'Durable quartz & composite surface selections',
-      'Integrated spice pullouts & hidden pantry hardware',
-      'Under-cabinet shadowline illumination',
+      'Modern pastel palettes and soft romantic florals',
+      'Customized couple seating and sofa focal points',
+      'Fairy light curtains and accent wash illumination',
+      'Cocktail and high-table floral accents',
     ],
-    materialFocus: 'Engineered Quartz, Fluted Glass, Matte Laminate',
+    materialFocus: 'Orchids, Lilies, Hydrangeas, Eucalyptus & Fairy Lighting',
   },
   {
-    id: 'home-decor',
+    id: 'event-floral-arrangements',
     number: '05',
-    title: 'HOME DECOR',
+    title: 'EVENT FLORAL ARRANGEMENTS',
     shortDescription:
-      'Furniture, lighting, accessories and finishing details that bring a space together.',
+      'Centerpieces, Haldi-Mehendi decor, car flowers, and custom floral accents.',
     longDescription:
-      'The finishing touches define a home’s soul. We hand-select artisanal ceramic vessels, architectural lamps, bespoke cushions, framed artwork, and indoor botanical arrangements that add genuine character and warmth.',
+      'From vibrant yellow-orange marigold themes for Haldi and Mehendi functions to delicate dining table centerpieces and ceremonial car decoration, we bring vibrant floral artistry to every event detail across Secunderabad.',
     image:
-      'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1200&q=80',
     highlights: [
-      'Handcrafted ceramics & sculptural plinths',
-      'Artisan table lamps & architectural pendants',
-      'Curated soft furnishings, cushions & throws',
-      'Indoor planter styling with natural greenery',
+      'Haldi & Mehendi yellow-orange theme setups',
+      'Traditional jhula (swing) floral decoration',
+      'Guest table floral centerpieces and vases',
+      'Bridal car fresh flower decoration',
     ],
-    materialFocus: 'Clay Ceramics, Hand-loomed Wool, Raw Linen, Bronze',
+    materialFocus: 'Yellow & Orange Marigold, Baby\'s Breath, Cut Foliage, Terracotta Accents',
   },
 ];

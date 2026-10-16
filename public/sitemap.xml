@@ -1,83 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ddhomedecor.in/</loc>
+    <loc>https://siriflowerdecoration.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/products</loc>
+    <loc>https://siriflowerdecoration.in/products</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/gallery</loc>
+    <loc>https://siriflowerdecoration.in/gallery</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/about</loc>
+    <loc>https://siriflowerdecoration.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/contact</loc>
+    <loc>https://siriflowerdecoration.in/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/products/curtains</loc>
+    <loc>https://siriflowerdecoration.in/products/wedding-stage-decoration</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/products/zebra-blinds</loc>
+    <loc>https://siriflowerdecoration.in/products/floral-backdrops</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/products/roller-blinds</loc>
+    <loc>https://siriflowerdecoration.in/products/wedding-entrance-decoration</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/products/pvc-blinds</loc>
+    <loc>https://siriflowerdecoration.in/products/engagement-reception-decoration</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ddhomedecor.in/products/custom-sofas</loc>
+    <loc>https://siriflowerdecoration.in/products/event-floral-arrangements</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ddhomedecor.in/products/accent-chairs</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ddhomedecor.in/products/centre-tables</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ddhomedecor.in/products/mattresses</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ddhomedecor.in/products/wallpapers</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ddhomedecor.in/products/carpets-mats</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://ddhomedecor.in/products/home-furnishings</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
 </urlset>

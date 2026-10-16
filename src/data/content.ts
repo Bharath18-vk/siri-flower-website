@@ -1,235 +1,227 @@
 /**
- * D&D Home Decor — Centralized Brand Copy & Editorial Narratives
- * Final Verified Client Information for Bengaluru, Karnataka
+ * Siri Flower Decoration: Centralized Brand Copy & Editorial Narratives
+ * Honest, realistic content for Bolarum, Secunderabad, Telangana.
  */
 
 export const siteContent = {
   hero: {
-    eyebrow: 'D&D HOME DECOR • BENGALURU',
-    categoryBadge: 'CUSTOMIZED CURTAINS • WINDOW BLINDS • FURNITURE • MATTRESSES',
-    heading: 'TRANSFORM\nYOUR SPACE.',
+    eyebrow: 'SIRI FLOWER DECORATION • BOLARUM, SECUNDERABAD',
+    categoryBadge: 'WEDDING STAGES • FLORAL BACKDROPS • ENTRANCE DECOR • RECEPTIONS',
+    heading: 'Turning Your Special Moments Into Beautiful Memories.',
     description:
-      'Customized curtains, blinds, furniture and home décor solutions for beautiful interiors.',
-    primaryCta: 'ENQUIRE ON WHATSAPP',
-    secondaryCta: 'EXPLORE OUR PRODUCTS',
+      'Bespoke floral and event decoration crafted for weddings, receptions, engagements, and auspicious family celebrations across Secunderabad and Hyderabad.',
+    primaryCta: 'Plan Your Decoration',
+    secondaryCta: 'Explore Our Work',
   },
 
   intro: {
-    label: 'D&D HOME DECOR',
-    heading: 'YOUR HOME.\nYOUR STYLE.\nYOUR SPACE.',
+    label: 'SIRI FLOWER DECORATION',
+    heading: 'CRAFTED WITH FRESHNESS.\nDESIGNED FOR CELEBRATION.',
     paragraph:
-      'Every space has its own character. D&D Home Decor brings together customised curtains, blinds, furniture and home décor solutions to help create interiors that feel beautiful, comfortable and truly yours.',
+      'Every milestone in life deserves a beautiful setting. At Siri Flower Decoration, we combine handpicked fresh blooms, harmonious color palettes, and thoughtful lighting to create enchanting stages, welcoming entrances, and celebratory backdrops that honor your most cherished occasions.',
   },
 
-  curtainsShowcase: {
-    label: 'PRIMARY COLLECTION',
-    heading: 'CUSTOMISED CURTAINS',
+  stageShowcase: {
+    label: 'PRIMARY SPECIALTY',
+    heading: 'WEDDING STAGE DECORATION',
     description:
-      'Beautifully customised curtains designed around your windows, interiors and requirements. From floor-to-ceiling sheer fabrics to rich pleated drapery, crafted for elegance and everyday comfort.',
-    ctaText: 'EXPLORE CURTAINS',
-    ctaHref: '/products/curtains',
+      'From traditional South Indian floral mandaps with cascading jasmine and marigolds to contemporary architectural arches adorned with roses and soft ambient lights, we tailor each stage to your venue and ceremony traditions.',
+    ctaText: 'EXPLORE STAGE DECOR',
+    ctaHref: '/products/wedding-stage-decoration',
     spaces: [
-      { name: 'Villas', desc: 'Dramatic drops and double-height custom drapery' },
-      { name: 'Apartments', desc: 'Tailored sheer panels and privacy blackout tracks' },
-      { name: 'Flats', desc: 'Compact, elegant window dressing for everyday living' },
-      { name: 'Offices', desc: 'Subtle light-filtering fabrics for productive work' },
-      { name: 'Showrooms', desc: 'Architectural statement drapes that elevate brand space' },
+      { name: 'Traditional Mandaps', desc: 'Sacred four-pillar floral canopies with fresh jasmine and rose garlands' },
+      { name: 'Reception Stages', desc: 'Sophisticated romantic backdrops with ambient lighting and couple seating' },
+      { name: 'Banquet Halls', desc: 'Custom-scaled floral structures designed for convention center stages' },
+      { name: 'Outdoor Lawns', desc: 'Open-air mandaps and floral gazebos surrounded by natural landscape' },
     ],
   },
 
-  blindsShowcase: {
-    label: 'WINDOW SOLUTIONS',
-    heading: 'MODERN WINDOW BLINDS',
+  backdropShowcase: {
+    label: 'CEREMONY FOCUS',
+    heading: 'FLORAL BACKDROPS',
     description:
-      'Precision light control with sleek contemporary profiles. Engineered for easy maintenance, clean aesthetic lines, and durable everyday performance.',
-    ctaText: 'EXPLORE BLINDS',
-    ctaHref: '/products/zebra-blinds',
+      'Intricately woven fresh flower walls and artisanal backdrops that serve as the visual centerpiece for couple rituals and family photo memories.',
+    ctaText: 'EXPLORE BACKDROPS',
+    ctaHref: '/products/floral-backdrops',
     types: [
-      { name: 'Zebra Blinds', desc: 'Dual-layer alternating sheer and privacy vanes' },
-      { name: 'Roller Blinds', desc: 'Streamlined blackout and solar sunscreen fabrics' },
-      { name: 'Roman Blinds', desc: 'Soft horizontal tailored fabric folds' },
-      { name: 'PVC Blinds', desc: '100% moisture-resistant wipeable slats for wet areas' },
-      { name: 'Venetian Blinds', desc: 'Classic horizontal tilt slats for precise daylight angle' },
+      { name: 'Fresh Rose Walls', desc: 'Dense ombré patterns and solid bloom arrangements' },
+      { name: 'Traditional Marigold Lattice', desc: 'Classic yellow-orange genda phool jaali designs' },
+      { name: 'Jasmine Strings (Mogra)', desc: 'Fragrant vertical drops with suspended brass bells' },
+      { name: 'Foliage & Pastel Crests', desc: 'Modern greenery walls with focal rose and orchid clusters' },
     ],
   },
 
-  furnitureShowcase: {
-    label: 'LIVING SPACES',
-    heading: 'CUSTOMISED FURNITURE',
+  entranceShowcase: {
+    label: 'FIRST IMPRESSIONS',
+    heading: 'WEDDING ENTRANCE DECORATION',
     description:
-      'Bring your ideas to life with furniture designed around your space, style and requirements. Tailored seating and accent pieces built with solid framing and premium comfort foam.',
-    ctaText: 'EXPLORE FURNITURE',
-    ctaHref: '/products/custom-sofas',
+      'Welcome your guests with enchanting floral arches, lit walkway aisles, brass samai plinths, and delicate flower petal carpets.',
+    ctaText: 'EXPLORE ENTRANCES',
+    ctaHref: '/products/wedding-entrance-decoration',
     items: [
-      { name: 'Sofas', desc: 'Custom 3-seater, L-shaped sectionals, and bespoke layouts' },
-      { name: 'Chairs', desc: 'Diamond-tufted accent armchairs and tailored dining seating' },
-      { name: 'Centre Tables', desc: 'Elegant coffee tables and nesting side units' },
+      { name: 'Monumental Arches', desc: 'Grand arched entryway structures dressed in lush fresh florals' },
+      { name: 'Pathway Petal Carpets', desc: 'Intricate petal rangolis and walking aisles flanked by lanterns' },
+      { name: 'Traditional Brassware', desc: 'Illuminated brass samais and floating flower petal urlis' },
     ],
   },
 
-  mattressShowcase: {
-    label: 'BEDDING & COMFORT',
-    heading: 'BRANDED MATTRESSES',
+  receptionShowcase: {
+    label: 'EVENING GLOW',
+    heading: 'ENGAGEMENT & RECEPTION DECOR',
     description:
-      'Explore mattress options from reputed brands available through D&D Home Decor. We are official dealers in our area in Bengaluru for India’s most trusted sleep brands.',
-    ctaText: 'EXPLORE MATTRESSES',
-    ctaHref: '/products/mattresses',
-    brands: [
-      { name: 'Kurlon', tagline: 'Orthopedic & Coir Foam Comfort' },
-      { name: 'Duroflex', tagline: 'Doctor-Recommended Orthopedic Mattresses' },
-      { name: 'Sobha', tagline: 'Luxury Pocket Spring & Hotel Mattresses' },
-      { name: 'Peps', tagline: 'Inner Spring & Restonic Sleep Systems' },
-      { name: 'Springfit', tagline: 'CertiPUR-US High-Density Sleep Engineering' },
-      { name: 'Restolex', tagline: 'Ergonomic Spinal Support Mattresses' },
+      'Elevated modern aesthetics for evening functions featuring romantic pastel palettes, fairy light curtains, and customized couple seating lounges.',
+    ctaText: 'EXPLORE RECEPTION DECOR',
+    ctaHref: '/products/engagement-reception-decoration',
+    elements: [
+      { name: 'Pastel Palettes', desc: 'Blush pink, champagne, ivory, and soft peach blossoms' },
+      { name: 'Fairy Light Canopies', desc: 'Warm amber curtain lights and gentle stage spotlights' },
+      { name: 'Couple Seating', desc: 'Customized luxury sofa backdrops and throne arrangements' },
+      { name: 'Banquet Centerpieces', desc: 'Delicate floral runners and table arrangements' },
     ],
   },
 
-  additionalProducts: {
-    label: 'HOME COLLECTION',
-    heading: 'WALLPAPERS & HOME DÉCOR',
+  additionalServices: {
+    label: 'COMPLETE EVENT FLORAL CARE',
+    heading: 'CELEBRATIONS & SPECIAL ACCENTS',
     description:
-      'Cohesive finishing touches to complete every corner of your home.',
+      'Cohesive floral styling for pre-wedding rituals, family functions, and ceremonial details.',
     items: [
-      { name: 'Wallpapers', desc: 'Textured grasscloth, vinyl, and modern geometric motifs', href: '/products/wallpapers' },
-      { name: 'Carpets & Mats', desc: 'High-density luxury area rugs, marble patterns, and bedside runners', href: '/products/carpets-mats' },
-      { name: 'Bed Spreads & Throws', desc: 'Soft designer bedding and breathable fabrics', href: '/products/home-furnishings' },
-      { name: 'Runners', desc: 'Decorative bed and console table runners', href: '/products/home-furnishings' },
-      { name: 'Sofa Covers', desc: 'Textured stretch covers to preserve and refresh furniture', href: '/products/home-furnishings' },
-      { name: 'Ready-made Curtains', desc: 'Immediate-use curtains for quick room setups', href: '/products/home-furnishings' },
-      { name: 'Bath Towels', desc: 'High-absorbency cotton towels for everyday comfort', href: '/products/home-furnishings' },
-      { name: 'Other Home Décor', desc: 'Artisanal tabletop accents, lamps, and decorative panels', href: '/products/home-furnishings' },
+      { name: 'Haldi & Sangeet Decor', desc: 'Vibrant marigold yellow setups, traditional props, and photo booths', href: '/products/event-floral-arrangements' },
+      { name: 'Floral Jhula (Swing)', desc: 'Custom-decorated wooden swings with marigolds and jasmine', href: '/products/event-floral-arrangements' },
+      { name: 'Car Floral Decoration', desc: 'Elegant fresh flower styling for bridal and groom vehicles', href: '/products/event-floral-arrangements' },
+      { name: 'Housewarming (Gruhapravesam)', desc: 'Traditional doorway torans, puja backdrops, and auspicious flowers', href: '/products/event-floral-arrangements' },
+      { name: 'Flower Petal Urlis', desc: 'Welcoming entrance brass vessels with floating petals and diyas', href: '/products/event-floral-arrangements' },
+      { name: 'Pooja Backdrops', desc: 'Sacred ceremonial floral framing for traditional rituals at home or hall', href: '/products/floral-backdrops' },
     ],
   },
 
   whoWeServe: {
-    label: 'OUR EXPERTISE',
-    heading: 'WHO WE SERVE',
+    label: 'EVENTS WE STYLE',
+    heading: 'CELEBRATIONS WE ADORN',
     description:
-      'Custom interior finishing tailored for diverse residential and commercial spaces across Bengaluru.',
+      'Thoughtful floral decoration tailored for meaningful family milestones and celebrations across Secunderabad and Hyderabad.',
     categories: [
       {
-        title: 'Villas & Luxury Homes',
+        title: 'Weddings & Kalyana Mandapams',
         description:
-          'Floor-to-ceiling customized drapery, large-span motorization, and expansive sectional sofas designed for grandeur.',
+          'Full-scale ceremonial mandaps, floral canopies, aisle petal carpets, and grand stage backdrops.',
       },
       {
-        title: 'Apartments & Flats',
+        title: 'Engagements & Receptions',
         description:
-          'Smart light control with zebra blinds, sheer curtains, space-efficient accent seating, and dust-resistant carpets.',
+          'Contemporary romantic pastel stages, fairy light curtains, and stylish couple seating focal points.',
       },
       {
-        title: 'Showrooms & Retail',
+        title: 'Haldi, Mehendi & Sangeet',
         description:
-          'Display-enhancing drapery, decorative accent panels, and durable commercial-grade furnishings.',
+          'Vibrant yellow marigold themes, decorated traditional swings, photo booths, and festive seating.',
       },
       {
-        title: 'Offices & Workspaces',
+        title: 'Cultural Ceremonies & Home Events',
         description:
-          'Glare-reduction roller blinds, ergonomic reception seating, and clean professional finishes.',
+          'Gruhapravesam housewarmings, naming ceremonies, anniversaries, and sacred temple celebrations.',
       },
     ],
   },
 
-  whyDD: {
-    label: 'WHY CHOOSE US',
-    heading: 'WHY D&D HOME DECOR',
+  whyChooseUs: {
+    label: 'OUR PROMISE',
+    heading: 'WHY SIRI FLOWER DECORATION',
     subheading:
-      'Dedicated to dependable service, honest craftsmanship, and thoughtful interior finishing.',
+      'Dedicated to fresh blooms, artistic execution, and dependable service for your special celebrations.',
     principles: [
       {
         number: '01',
-        title: 'QUALITY ASSURED',
-        description: 'Thoughtfully selected products and finishing solutions.',
+        title: 'FRESH BLOOMS',
+        description: 'Quality fresh flowers sourced daily for vibrant presentation.',
         detail:
-          'From resilient upholstery fabrics to smooth window hardware and branded mattresses, we prioritize materials that stand up to daily life.',
+          'We hand-select fresh roses, fragrant jasmine, bright marigolds, and exotic blooms so your stage and backdrops stay vibrant throughout your rituals.',
       },
       {
         number: '02',
-        title: 'CREATIVE DESIGN',
-        description: 'Ideas that help every space feel more personal.',
+        title: 'CUSTOM DESIGN',
+        description: 'Setups tailored to your venue, theme, and family traditions.',
         detail:
-          'We listen to how you use your rooms and recommend harmonious fabric palettes, textures, and finishes tailored to your interior style.',
+          'Every celebration is personal. We listen to your preferred colors, traditions, and venue layout to recommend harmonious floral concepts.',
       },
       {
         number: '03',
-        title: 'RELIABLE SERVICE',
-        description:
-          'A straightforward experience from selection to installation where applicable.',
+        title: 'ON-TIME SETUP',
+        description: 'Punctual arrival and complete on-site readiness ahead of rituals.',
         detail:
-          'Clear guidance, honest communication, and respectful on-site measurements to make decorating your home enjoyable and stress-free.',
+          'We understand the importance of auspicious timings (muhurtham). Our team coordinates diligently to ensure complete venue setup before guests arrive.',
       },
       {
         number: '04',
-        title: 'ON-TIME DELIVERY',
-        description:
-          'Professional coordination and dependable project handling where applicable.',
+        title: 'HONEST SERVICE',
+        description: 'Direct communication, transparent guidance, and respectful execution.',
         detail:
-          'Respect for your schedule with dependable timelines, careful handling, and diligent finishing touches.',
+          'Straightforward discussions on WhatsApp or phone with clear pricing, attentive service, and genuine dedication to your peace of mind.',
       },
     ],
   },
 
   howItWorks: {
-    label: 'THE JOURNEY',
-    heading: 'HOW IT WORKS',
+    label: 'THE PROCESS',
+    heading: 'HOW WE WORK TOGETHER',
     subheading:
-      'A simple, four-step process to bring your vision into your home.',
+      'A straightforward four-step process to bring your floral vision to life.',
     steps: [
       {
         step: '01',
-        name: 'DISCOVER',
-        description: 'Tell us about your space and what you’re looking for on WhatsApp or at our showroom.',
+        name: 'CONNECT & SHARE',
+        description: 'Reach out via WhatsApp or phone with your event date, venue in Secunderabad/Hyderabad, and preferred decoration style.',
       },
       {
         step: '02',
-        name: 'SELECT',
-        description: 'Explore authentic fabric swatches, blind types, furniture designs, and mattress options.',
+        name: 'EXPLORE DESIGNS',
+        description: 'Review curated stage photos, floral backdrop concepts, flower options, and color palette recommendations.',
       },
       {
         step: '03',
-        name: 'CUSTOMISE',
-        description: 'Finalize measurements, materials, and colors tailored exactly for your home.',
+        name: 'CUSTOMISE & CONFIRM',
+        description: 'Finalize measurements, flower densities, lighting accents, and the setup schedule tailored to your muhurtham.',
       },
       {
         step: '04',
-        name: 'TRANSFORM',
-        description: 'Enjoy professional finishing and watch your interior space come together beautifully.',
+        name: 'CELEBRATE',
+        description: 'Our team arrives early on-site with fresh flowers to assemble your stage, leaving you free to enjoy your special day.',
       },
     ],
   },
 
   about: {
-    label: 'ABOUT D&D HOME DECOR',
-    heading: 'DECOR THAT\nFEELS LIKE YOU.',
+    label: 'ABOUT SIRI FLOWER DECORATION',
+    heading: 'TURNING SPECIAL MOMENTS\nINTO BEAUTIFUL MEMORIES.',
     body: [
-      'D&D Home Decor is a premier home furnishings and interior solutions studio located at Herohalli, Andrahalli Main Road, Bengaluru.',
-      'We specialize in customized curtains for villas, apartments, flats, showrooms, and offices, along with modern window blinds, bespoke sofas, accent chairs, wallpapers, and high-quality floor carpets.',
-      'As authorized dealers for India’s leading mattress brands—including Kurlon, Duroflex, Sobha, Peps, Springfit, and Restolex—we provide complete comfort solutions for modern homes.',
-      'Whether you are furnishing a new apartment or rejuvenating a cherished family room, we believe good interior design should be practical, durable, and grounded in the way you live.',
+      'Siri Flower Decoration is a dedicated flower and event decoration service located near Ratna Colony, Bolarum, Secunderabad, Telangana.',
+      'We specialize in crafting beautiful wedding stages, handcrafted floral backdrops, grand entrance welcome arches, and evening reception decor for families across Secunderabad and Hyderabad.',
+      'From traditional rituals filled with the fragrance of fresh jasmine and vibrant marigolds to contemporary pastel engagements with soft roses and fairy lights, we approach each celebration with deep care.',
+      'We believe that great decoration is not about exaggerated claims or formulaic templates. It is about fresh flowers, dependable on-time execution, and genuine respect for your family’s special moments.',
     ],
   },
 
   transformation: {
-    label: 'THE POWER OF DETAILS',
-    heading: 'TRANSFORM\nYOUR SPACE.',
-    lead: 'A beautiful home is created through the details.',
-    elements: ['Curtains', 'Light', 'Texture', 'Comfort', 'Colour', 'Pattern'] as string[],
-    conclusion: 'Bring them together thoughtfully and the entire room changes.',
+    label: 'THE ART OF FLORAL DETAILS',
+    heading: 'EVERY DETAIL MATTERS.',
+    lead: 'A memorable celebration is brought to life through thoughtful floral harmony.',
+    elements: ['Fresh Blooms', 'Warm Light', 'Color Harmony', 'Fragrance', 'Traditional Craft', 'Punctual Setup'] as string[],
+    conclusion: 'When every petal, drape, and light is placed with care, your celebration becomes unforgettable.',
   },
 
   inspiration: {
-    label: 'VISUAL REFERENCES',
-    heading: 'SPACES WE LOVE',
-    subheading: 'Inspirational room compositions showcasing the balance of window treatments, furniture, and tactile décor.',
-    disclaimer: 'Representative imagery used for design presentation.',
+    label: 'VISUAL INSPIRATION',
+    heading: 'DESIGNS WE LOVE',
+    subheading: 'Representative floral and event compositions illustrating stage palettes, entrance arches, and ceremony backdrops.',
+    disclaimer: 'Representative inspiration imagery curated for design and aesthetic presentation.',
   },
 
   contactCta: {
-    label: 'START YOUR PROJECT',
-    heading: 'READY TO\nTRANSFORM YOUR SPACE?',
+    label: 'PLAN YOUR CELEBRATION',
+    heading: 'READY TO PLAN\nYOUR DECORATION?',
     subheading:
-      'Reach out directly on WhatsApp or visit our showroom on Andrahalli Main Road, Bengaluru.',
-    primaryCta: 'ENQUIRE ON WHATSAPP',
-    secondaryCta: 'VISIT OUR SHOWROOM',
+      'Connect directly on WhatsApp or call us to discuss your event date, venue, and floral preferences in Bolarum, Secunderabad.',
+    primaryCta: 'Plan Your Decoration',
+    secondaryCta: 'View Contact Details',
   },
 };

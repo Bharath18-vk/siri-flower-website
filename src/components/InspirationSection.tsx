@@ -68,7 +68,7 @@ export const InspirationSection: React.FC = () => {
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-opacity duration-300 group-hover:opacity-95"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-espresso/80 via-espresso/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300" />
                 

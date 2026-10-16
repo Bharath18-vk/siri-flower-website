@@ -1,4 +1,4 @@
-﻿/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -10,13 +10,33 @@ export default {
         ivory: '#FBF9F5',
         cream: '#F3EFEA',
         beige: '#EAE4DC',
-        espresso: '#2A211C',
-        charcoal: '#1C1917',
+        espresso: '#231815',
+        charcoal: '#1A1412',
         'muted-brown': '#6B4A35',
         'warm-gold': {
-          DEFAULT: '#B28A52',
-          light: '#C49E65',
-          dark: '#99723D',
+          DEFAULT: '#C5A059',
+          light: '#D8B87A',
+          dark: '#9E7E3B',
+        },
+        champagne: {
+          DEFAULT: '#C5A059',
+          light: '#D8B87A',
+          dark: '#9E7E3B',
+        },
+        burgundy: {
+          DEFAULT: '#581825',
+          light: '#732333',
+          dark: '#3D0E17',
+        },
+        'floral-pink': {
+          DEFAULT: '#E8C5C8',
+          light: '#F5E4E6',
+          dark: '#C89399',
+        },
+        sage: {
+          DEFAULT: '#6E8062',
+          light: '#8B9C80',
+          dark: '#526149',
         },
         terracotta: {
           DEFAULT: '#A9553F',

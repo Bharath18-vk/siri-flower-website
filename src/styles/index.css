@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,6 +8,10 @@
   --color-linen: #E8E2D8;
   --color-espresso: #1A1614;
   --color-charcoal: #1F2022;
+  --color-champagne: #C5A059;
+  --color-burgundy: #581825;
+  --color-floral-pink: #E8C5C8;
+  --color-sage: #6E8062;
   --color-clay: #B86B53;
 }
 

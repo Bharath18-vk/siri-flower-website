@@ -14,24 +14,24 @@ interface ApiMediaRecord {
 
 function mapCategoryToGalleryCategory(
   rawCat: string
-): { category: 'CURTAINS' | 'BLINDS' | 'FURNITURE' | 'CARPETS' | 'DECOR'; categoryLabel: string } {
+): { category: 'STAGE' | 'BACKDROP' | 'ENTRANCE' | 'RECEPTION' | 'ARRANGEMENTS'; categoryLabel: string } {
   const normalized = (rawCat || '').toLowerCase().trim();
 
-  if (normalized.includes('curtain')) {
-    return { category: 'CURTAINS', categoryLabel: 'Custom Curtains' };
+  if (normalized.includes('stage') || normalized.includes('mandap') || normalized.includes('curtain')) {
+    return { category: 'STAGE', categoryLabel: 'Wedding Stage' };
   }
-  if (normalized.includes('blind')) {
-    return { category: 'BLINDS', categoryLabel: 'Window Blinds' };
+  if (normalized.includes('backdrop') || normalized.includes('wall') || normalized.includes('blind') || normalized.includes('wallpaper')) {
+    return { category: 'BACKDROP', categoryLabel: 'Floral Backdrops' };
   }
-  if (normalized.includes('furniture') || normalized.includes('sofa') || normalized.includes('chair')) {
-    return { category: 'FURNITURE', categoryLabel: 'Custom Furniture' };
+  if (normalized.includes('entrance') || normalized.includes('arch') || normalized.includes('pathway') || normalized.includes('carpet')) {
+    return { category: 'ENTRANCE', categoryLabel: 'Entrance Décor' };
   }
-  if (normalized.includes('carpet') || normalized.includes('mat')) {
-    return { category: 'CARPETS', categoryLabel: 'Carpets & Mats' };
+  if (normalized.includes('reception') || normalized.includes('engagement') || normalized.includes('furniture') || normalized.includes('sofa')) {
+    return { category: 'RECEPTION', categoryLabel: 'Reception & Engagement' };
   }
 
-  // Wallpapers, Mattresses, Home Decor, Showroom fall under DECOR
-  return { category: 'DECOR', categoryLabel: rawCat || 'Home Décor' };
+  // Haldi, Mehendi, Car, Centerpiece, Decor fall under ARRANGEMENTS
+  return { category: 'ARRANGEMENTS', categoryLabel: rawCat || 'Floral Arrangements' };
 }
 
 export function useGallery() {
@@ -59,7 +59,7 @@ export function useGallery() {
               category,
               categoryLabel,
               imageUrl: img.storage_url,
-              caption: img.caption || img.alt_text || 'Custom client installation by D&D Home Decor.',
+              caption: img.caption || img.alt_text || 'Custom event decoration by Siri Flower Decoration.',
               featured: true,
             };
           });

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Home, Building2, Store, Briefcase } from 'lucide-react';
+import { Crown, PartyPopper, Sun, Heart } from 'lucide-react';
 import { siteContent } from '../data/content';
 
 export const WhoWeServe: React.FC = () => {
   const { whoWeServe } = siteContent;
 
   const icons = [
-    <Home className="w-5 h-5 text-warm-gold-dark" key="villa" />,
-    <Building2 className="w-5 h-5 text-warm-gold-dark" key="apartment" />,
-    <Store className="w-5 h-5 text-warm-gold-dark" key="showroom" />,
-    <Briefcase className="w-5 h-5 text-warm-gold-dark" key="office" />,
+    <Crown className="w-5 h-5 text-warm-gold-dark" key="wedding" />,
+    <PartyPopper className="w-5 h-5 text-warm-gold-dark" key="reception" />,
+    <Sun className="w-5 h-5 text-warm-gold-dark" key="haldi" />,
+    <Heart className="w-5 h-5 text-warm-gold-dark" key="cultural" />,
   ];
 
   return (
@@ -47,7 +47,7 @@ export const WhoWeServe: React.FC = () => {
 
               <div className="pt-2 border-t border-stone-200/60">
                 <span className="text-[10px] uppercase tracking-widest font-mono text-warm-gold-dark">
-                  Tailored Interior Solutions
+                  Bespoke Floral Styling
                 </span>
               </div>
             </div>

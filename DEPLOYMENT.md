@@ -1,4 +1,4 @@
-# D&D Home Decor — Production Deployment & Admin Setup Guide
+# Siri Flower Decoration: Production Deployment & Admin Setup Guide
 
 This guide details how to deploy the website and secure Admin Dashboard to **Vercel** with **Supabase (PostgreSQL + Object Storage)** for genuinely persistent, serverless-ready media management.
 

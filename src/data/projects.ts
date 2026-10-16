@@ -1,11 +1,6 @@
-﻿/**
- * D&D Home Decor — Portfolio Projects Data
- *
- * NOTE FOR D&D CLIENT HANDOFF:
- * When D&D supplies their 12 or 20 real project photos:
- * 1. Place the photos in public/images/projects/ (or keep remote URLs)
- * 2. Update the image paths below
- * 3. Adjust titles or materials to match the real project specs
+/**
+ * Siri Flower Decoration: Portfolio Projects Data
+ * Representative event concepts.
  */
 
 export interface ProjectDetail {

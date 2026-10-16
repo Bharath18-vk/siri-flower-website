@@ -1,22 +1,24 @@
-﻿# D&D Home Decor — Premium Website Concept
+# Siri Flower Decoration — Premium Wedding & Event Decoration
 
-A modern, production-grade website concept designed for **D&D Home Decor** (Bengaluru, Karnataka), positioning their window treatments, bespoke furnishings, and interior finishing solutions.
+A modern, production-grade business website designed for **Siri Flower Decoration** (Bolarum, Secunderabad, Telangana, India), presenting bespoke floral styling, ceremonial mandaps, photo backdrops, and event decor services.
 
 ## Overview
 
-- **Brand**: D&D Home Decor
-- **Positioning**: Transform Your Space — Home Decor & Interior Spaces
-- **Location**: Bengaluru, Karnataka
-- **Core Collections**: Curtains, Zebra Blinds, PVC Blinds, Custom Sofas, Wallpapers, Home Décor
-- **Primary Conversion**: WhatsApp Direct Click-to-Chat with pre-filled inquiry messages
+- **Brand**: Siri Flower Decoration
+- **Tagline**: Turning Your Special Moments Into Beautiful Memories.
+- **Location**: near Ratna Colony, Ratna Colony, Bolarum, Secunderabad, Telangana 500010, India
+- **Contact / WhatsApp**: +91 99660 42727 (919966042727)
+- **Core Offerings**: Wedding Stage Decoration, Floral Backdrops, Wedding Entrance Decoration, Engagement & Reception Decoration, Event Floral Arrangements
+- **Primary Conversion**: Contextual WhatsApp Direct Click-to-Chat with pre-filled event inquiry details
 
 ## Tech Stack
 
 - **Framework**: React 18 with TypeScript
 - **Bundler**: Vite
-- **Styling**: Tailwind CSS with custom editorial typography and luxury color palette
+- **Styling**: Tailwind CSS with custom editorial floral palette (Champagne Gold, Deep Burgundy, Warm Ivory, Sage Green)
 - **Icons**: Lucide React
 - **Routing**: React Router DOM (v6) with single-page application redirect support
+- **Backend / Admin**: Node.js Express serverless API with JWT HttpOnly cookies, bcryptjs password hashing, and Supabase integration
 
 ## Getting Started
 
@@ -25,37 +27,35 @@ A modern, production-grade website concept designed for **D&D Home Decor** (Beng
 - npm or pnpm
 
 ### Local Development
-`ash
+```bash
 # Install dependencies
 npm install
 
-# Start development server
-npm run dev
-`
+# Start Vite development server
+node node_modules/vite/bin/vite.js
+# Or start backend API server
+node server/server.js
+```
 
 ### Production Build
-`ash
+```bash
 # Type check & build production assets to /dist
 npm run build
 
 # Preview production build locally
 npm run preview
-`
+```
 
 ## Deployment Options
 
 ### Option 1: Vercel (Recommended)
-1. Import this repository into [Vercel](https://vercel.com).
+1. Push this repository to GitHub and import into [Vercel](https://vercel.com).
 2. Framework preset will automatically detect **Vite**.
-3. Output directory is set to **dist**.
-4. SPA rewrites are already configured in ercel.json.
+3. Output directory is set to `dist`.
+4. SPA rewrites and serverless API endpoints are configured in `vercel.json`.
 
 ### Option 2: Netlify
-1. Import this repository into [Netlify](https://netlify.com) or drag and drop the dist folder into [app.netlify.com/drop](https://app.netlify.com/drop).
-2. Build command: 
-pm run build
-3. Publish directory: dist
-4. SPA redirects are already configured in public/_redirects.
-
-### Option 3: Cloudflare Pages / GitHub Pages
-- Direct deployment from this repository with build output pointing to dist.
+1. Import this repository into [Netlify](https://netlify.com).
+2. Build command: `npm run build`
+3. Publish directory: `dist`
+4. SPA redirects are configured in `public/_redirects`.

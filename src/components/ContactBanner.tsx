@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { siteContent } from '../data/content';
@@ -31,17 +31,17 @@ export const ContactBanner: React.FC = () => {
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-8 py-4 bg-warm-gold hover:bg-warm-gold-light text-espresso font-medium rounded text-xs uppercase tracking-[0.16em] shadow-luxury transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-8 py-4 bg-warm-gold hover:bg-warm-gold-light text-espresso font-semibold rounded text-xs uppercase tracking-[0.16em] shadow-luxury transition-all"
           >
             <MessageCircle className="w-4 h-4 text-espresso" />
-            <span>Chat on WhatsApp</span>
+            <span>{contactCta.primaryCta}</span>
           </a>
 
           <Link
             to="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-4 bg-stone-800 hover:bg-stone-700 text-ivory border border-stone-700 rounded text-xs uppercase tracking-[0.16em] transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-4 bg-stone-800 hover:bg-stone-700 text-ivory border border-stone-700 rounded text-xs uppercase tracking-[0.16em] transition-all font-medium"
           >
-            <span>Send an Enquiry</span>
+            <span>{contactCta.secondaryCta}</span>
             <ArrowRight className="w-4 h-4 text-stone-400" />
           </Link>
         </div>

@@ -4,7 +4,7 @@ import { businessConfig, getWhatsAppUrl } from '../data/config';
 import { WhyDDSection } from '../components/WhyDDSection';
 import { WhoWeServe } from '../components/WhoWeServe';
 import { ContactBanner } from '../components/ContactBanner';
-import { MapPin, Phone, MessageCircle, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Flower2 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
   const { about } = siteContent;
@@ -21,7 +21,7 @@ export const AboutPage: React.FC = () => {
             </span>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-espresso font-normal leading-[1.1] tracking-tight">
-              DECOR THAT<br />FEELS LIKE YOU.
+              TURNING SPECIAL MOMENTS<br />INTO BEAUTIFUL MEMORIES.
             </h1>
 
             <div className="space-y-4 text-base sm:text-lg text-stone-600 font-light leading-relaxed max-w-2xl pt-2">
@@ -36,7 +36,7 @@ export const AboutPage: React.FC = () => {
                 <div className="flex items-center space-x-2 text-espresso">
                   <MapPin className="w-4 h-4 text-warm-gold-dark" />
                   <span className="text-xs uppercase tracking-widest font-semibold">
-                    Studio Location
+                    Service Location
                   </span>
                 </div>
                 <p className="text-xs text-stone-600 font-light leading-relaxed">
@@ -52,7 +52,7 @@ export const AboutPage: React.FC = () => {
                   </span>
                 </div>
                 <p className="text-xs text-stone-600 font-light">
-                  {businessConfig.primaryPhone} / {businessConfig.secondaryPhone}
+                  {businessConfig.primaryPhone}
                 </p>
                 <a
                   href={getWhatsAppUrl()}
@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
                   className="inline-flex items-center space-x-1.5 text-xs text-green-700 font-medium hover:underline pt-1"
                 >
                   <MessageCircle className="w-3.5 h-3.5" />
-                  <span>WhatsApp Enquiry</span>
+                  <span>WhatsApp Consultation</span>
                 </a>
               </div>
             </div>
@@ -70,15 +70,15 @@ export const AboutPage: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] rounded overflow-hidden shadow-luxury bg-stone-200">
               <img
-                src="/images/dd/curtains/curtain-02.jpeg"
-                alt="Contemporary home decor and customized curtain installation by D&D Home Decor"
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"
+                alt="Siri Flower Decoration wedding entrance and floral styling"
                 loading="eager"
                 className="w-full h-full object-cover object-center"
               />
               <div className="absolute bottom-4 left-4 right-4 p-3 rounded bg-ivory/95 backdrop-blur-md border border-stone-200 shadow-sm flex items-center space-x-3">
-                <ShieldCheck className="w-5 h-5 text-warm-gold-dark shrink-0" />
+                <Flower2 className="w-5 h-5 text-warm-gold-dark shrink-0" />
                 <p className="text-[11px] text-stone-700 font-light">
-                  Serving villas, apartments, flats, showrooms &amp; offices across Bengaluru.
+                  Serving weddings, receptions, and family celebrations across Secunderabad &amp; Hyderabad.
                 </p>
               </div>
             </div>
@@ -97,15 +97,15 @@ export const AboutPage: React.FC = () => {
       <section className="py-20 sm:py-28 bg-ivory">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <span className="text-[11px] uppercase tracking-widest font-semibold text-stone-400 block">
-            THE D&amp;D TOUCH
+            THE ART OF FRESH BLOOMS
           </span>
 
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-espresso font-normal leading-snug">
-            Transforming Spaces With Intention &amp; Care.
+            Celebrating Milestones With Fresh Flowers &amp; Devotion.
           </h2>
 
           <p className="text-base sm:text-lg text-stone-600 font-light leading-relaxed">
-            A room comes to life when curtains filter sunlight just right, when a sofa provides enduring everyday comfort, when a mattress gives restorative rest, and when wall finishes reflect your personal taste. We take pride in assisting homeowners at every step of that journey.
+            A celebration comes to life when fresh jasmine garlands scent the air, when a wedding mandap glows under warm amber lights, and when the couple entrance welcomes guests with grandeur. We take pride in assisting families at every step of that journey.
           </p>
 
           <div className="pt-4 flex justify-center">

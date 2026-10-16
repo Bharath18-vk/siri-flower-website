@@ -29,14 +29,14 @@ interface MediaRecord {
 }
 
 const CATEGORIES = [
-  'Curtains',
-  'Blinds',
-  'Furniture',
-  'Carpets & Mats',
-  'Home Décor',
-  'Mattresses',
-  'Wallpapers',
-  'Showroom',
+  'Wedding Stage Decoration',
+  'Floral Backdrops',
+  'Wedding Entrance Decoration',
+  'Engagement & Reception Decoration',
+  'Event Floral Arrangements',
+  'Haldi & Mehendi Decor',
+  'Car Floral Decoration',
+  'Housewarming & Pooja Decor',
 ];
 
 export const AdminGalleryPage: React.FC = () => {
@@ -54,7 +54,7 @@ export const AdminGalleryPage: React.FC = () => {
 
   // Upload state
   const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
-  const [uploadCategory, setUploadCategory] = useState<string>('Curtains');
+  const [uploadCategory, setUploadCategory] = useState<string>('Wedding Stage Decoration');
   const [uploadTitle, setUploadTitle] = useState<string>('');
   const [uploadCaption, setUploadCaption] = useState<string>('');
   const [uploadAltText, setUploadAltText] = useState<string>('');
